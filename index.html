@@ -103,13 +103,13 @@
   .ai-disclaimer {
     background: #fffbeb;
     border-bottom: 1px solid #fcd34d;
-    padding: 10px 16px;
+    padding: 5px 16px;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 0.78rem;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.73rem;
     color: #78350f;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   .ai-disclaimer-icon {
     font-size: 1.1rem;
@@ -1072,10 +1072,7 @@
 <!-- ── AI DISCLAIMER ── -->
 <div class="ai-disclaimer">
   <div class="ai-disclaimer-icon">🤖</div>
-  <div>
-    <strong>AIによる情報収集・要約コンテンツです。</strong>
-    このページはAI（Claude）がロイター・Bloomberg・日経新聞・NHK等の報道をもとに自動収集・整理したものです。内容の正確性は保証できません。重要な判断の前には必ず一次ソース（各報道機関の原文）をご確認ください。最終更新: 2026年3月29日
-  </div>
+  <div><strong>AIによる要約</strong>（Claude ／ ロイターワBB・日経ワNHKなど）｜ 内容は参考情報です。重要な判断の前に一次ソースをご確認ください。</div>
 </div>
 
 <!-- ── STATUS BANNER ── -->
@@ -1129,7 +1126,12 @@
     <a class="float-btn fb-fb" id="float-fb" href="#" target="_blank" rel="noopener">f Facebook</a>
     <button class="float-btn fb-copy" id="float-copy" onclick="copyLink(this)">🔗 リンクをコピー</button>
   </div>
-  <button class="float-share-toggle" id="float-toggle" onclick="toggleFloatShare()" title="シェアする">📤</button>
+  <button class="float-share-toggle" id="float-toggle" onclick="toggleFloatShare()" title="シェアする">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+      <span style="font-size:0.5rem;font-weight:800;letter-spacing:0.05em;color:white;">シェア</span>
+    </div>
+  </button>
 </div>
 
 <!-- ── MAP ── -->
@@ -1232,7 +1234,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-ir">🇮🇷 イラン</span>
           <strong>米・イスラエルがイラン軍事施設を攻撃 → 革命防衛隊が封鎖宣言</strong>
-          米国とイスラエルによる軍事攻撃を受け、イランの革命防衛隊が「敵対国の船舶に対しホルムズ海峡を閉鎖する」と宣言。1日120隻だった通航船は5隻程度に激減。
+          革命防衛隊が封鎖宣言。1日120隻だった通航船が5隻程度に激減。
         </div>
       </div>
       <div class="ptl-item">
@@ -1250,7 +1252,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-us">🇺🇸 トランプ大統領</span>
           <strong>「日中韓・英仏も軍艦を派遣せよ」と各国に要求</strong>
-          トランプ大統領がホルムズ海峡の封鎖解除に向け、同盟国に海軍艦艇の派遣を呼びかけ。「日本の反応を見たい」と名指しで言及（日経）。
+          同盟国に海軍艦艇の派遣を呼びかけ。日本を名指しで言及（日経）。
         </div>
       </div>
       <div class="ptl-item">
@@ -1259,7 +1261,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-intl">🌐 日英仏独伊蘭加 共同声明</span>
           <strong>7カ国首脳が共同声明。「機雷・ドローン攻撃を即時停止せよ」</strong>
-          高市首相も署名に参加。「商業船舶の通行の自由を保障するよう」イランに求めた。最終的に参加国は30か国に拡大。
+          高市首相も署名。参加国は30か国に拡大。
         </div>
       </div>
       <div class="ptl-item">
@@ -1268,7 +1270,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-jp">🇯🇵 高市首相 ✕ 🇮🇷 イラン外相</span>
           <strong>日本への特別配慮：イランが「日本船の通過を認める用意」と表明</strong>
-          高市首相とトランプ大統領の会談を受け、イランのアラグチ外相が「日本関連船舶の通過は認める用意がある」と発表。日本のイランとの長年の関係が奏功した形。
+          アラグチ外相「日本関連船舶の通過を認める用意がある」と発表。
         </div>
       </div>
       <div class="ptl-item">
@@ -1277,7 +1279,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-us">🇺🇸 トランプ大統領</span>
           <strong>「48時間以内に開放しなければ電力インフラを攻撃する」と最後通告</strong>
-          SNSに投稿。イランは「攻撃すれば完全封鎖で対抗する」と反発。日韓などアジア諸国は米とイランの間で難しい対応を迫られる（Bloomberg）。
+          イランは「攻撃すれば完全封鎖で対抗」と反発（Bloomberg）。
         </div>
       </div>
       <div class="ptl-item">
@@ -1295,7 +1297,7 @@
         <div class="ptl-card">
           <span class="ptl-who who-ir">🇮🇷 イラン ／ 🇯🇵 日本政府</span>
           <strong>イランがタンカー10隻の通航を許可。ただし全面解除ならず</strong>
-          トランプ大統領が閣議で「イランがタンカー10隻を通航させた」と発表。同日、経産省・エネ庁幹部が首相官邸で医療機器の調達見通しについても報告。
+          「タンカー10隻を通航」と発表。ただし全面解除ならず。
         </div>
       </div>
       <div class="ptl-item">
@@ -1315,7 +1317,7 @@
         <div class="ptl-card">
           <span class="ptl-who" style="background:#6c5ce7;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">🌐 G7外相会合</span>
           <strong>G7共同声明：「通航料なき航行の自由の恒久的回復が絶対的に必要」</strong>
-          G7外相会合が共同声明。民間人・インフラへの攻撃の即時停止と、ホルムズ海峡の航行自由の恒久的回復の絶対的必要性を確認。米ルビオ国務長官は「反ホルムズ支配連合」構築を提案。茂木外相「G7で齻齞なし」。（出典：日経新聞セAFDセJETRO）
+          攻撃の即時停止と航行の自由の恒久的回復を確認。茂木外相「G7で齊齎なし」。（日経ワAFP）
         </div>
       </div>
       <div class="ptl-item">
@@ -1359,19 +1361,17 @@
         </div>
       </div>
       <div class="diplo-gap-footer">
-        <strong>なぜこのギャップが生まれているのか（事実として確認できること）：</strong><br>
-        ① 茂木外相はイランのアラグチ外相と3月17日に電話会談を行っているが、その後「個別交渉は考えていない」と公言した（日経）。<br>
-        ② 日本政府はイランの封鎖を批判する共同声明（30か国）に参加する一方、米・イスラエルによる攻撃については公式な非難声明を出していない（ハンギョレ新聞・Yahoo!ニュース）。<br>
-        ③ 米国はG7・同盟国に「軍艦を派遣せよ」と求めており、日本がイランと個別に外交交渉することは米国との関係上、難しい立場に置かれているとみられる。<br>
-        ④ イラン側は「日本が米国に同調して軍事的に関与すれば、この優遇を取り消す」との含みを持たせており、日本政府はイランとの独自交渉が米国を刺激するリスクを考慮しているとされる。<br>
-        <span style="color:var(--gray); font-size:0.78rem; display:block; margin-top:8px;">※ 日本政府が「なぜ個別交渉をしないか」について公式に説明した記録はなく、上記③④は専門家・報道の分析による。</span>
-      </div>
+        <strong>なぜこのギャップが生まれているのか：</strong><br>
+        ① 茂木外相は3/17にアラグチ外相と会談後、「個別交渉は考えていない」と公言（日経）。<br>
+        ② 米国が同盟国に「艦艇派遣」を要求しており、日本の独自交渉は米国との関係上難しい立場。<br>
+        <span style="color:var(--gray); font-size:0.75rem; display:block; margin-top:6px;">※ 上記は報道・専門家分析による。日本政府の公式説明はなし。</span>
+      </div></div>
     </div>
 
     <div class="wall-box">
       <h4>⚖ 日本が自衛隊を簡単に出せない理由</h4>
-      自民党の一部議員は「他国船も護衛できる特措法」の提案を始めましたが（3/26）、現行の法制度では自衛隊が外国領域での武力衝突に関与することは憲法上きわめて困難です。イランは日本を「中立的な友好国」として扱ってきた経緯があり、軍事的に関与すれば日本船のみ通過できるという優遇が失われるリスクもあります。日本政府は「外交・経済的手段で解決を目指す」という難しい綱渡りを続けています。
-    </div>
+      現行法では自衛隊が外国での武力衝突に関与することは憲法上困難。また軍事関与すればイランからの特別配慮（日本船優遇）を失うリスクも。日本は外交・経済手段での解決を目指しています。
+    </div></div>
   </div>
 </section>
 
@@ -1415,9 +1415,7 @@
         </div>
       </div>
       <div class="testimony-text">
-        この船長は3週間以上、ペルシャ湾の中で動けない状態が続きました。
-        <div class="testimony-quote">「頭上で時折、爆発音が響く。GPSは妨害されていて、どこにいるかさえ正確にはわからない」</div>
-        交代要員は来られず、食料や飲料水の補給も滞り、精神的・肉体的な疲弊が限界に達しています。イランの革命防衛隊による停船検査や、飛翔体の目撃も相次いでいます。
+        3週間以上停泊中。交代要員・食料・水の補給も滞り、精神的・肉体的に限界。
       </div>
     </div>
 
@@ -1430,7 +1428,6 @@
         </div>
       </div>
       <div class="testimony-text">
-        ホルムズ海峡を通過できないまま、ペルシャ湾内では大量の原油タンカーが浮かんだままです。日本向けに出荷予定だったイランからの原油も含まれており、「日本の消費量45日分」に相当する量が海の上で滞留しているとの分析もあります。
         <div class="testimony-quote">「海上の地図からタンカーの列が消えた。最後の中東発原油タンカーが3月22日に日本に到着した」（Bloomberg）</div>
       </div>
     </div>
