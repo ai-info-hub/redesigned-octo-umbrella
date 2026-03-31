@@ -1203,16 +1203,16 @@
   <p class="hero-sub">中東の小さな海峡の出来事が、あなたのガソリン・電気代・透析治療にまで影響する理由を、政治に詳しくなくても5分でわかるように解説します。</p>
   <p class="hero-date" id="last-updated">最終更新: 2026年3月31日 ／ 情報源: ロイター・Bloomberg・日経・NHKなど</p>
   <div class="hero-share">
-    <a class="hero-share-btn btn-x" id="share-x" href="#" target="_blank" rel="noopener">
+    <a class="hero-share-btn btn-x" id="share-x" onclick="trackShare('X','hero')" href="#" target="_blank" rel="noopener">
       𝕏 でシェア
     </a>
-    <a class="hero-share-btn btn-line" id="share-line" href="#" target="_blank" rel="noopener">
+    <a class="hero-share-btn btn-line" id="share-line" onclick="trackShare('LINE','hero')" href="#" target="_blank" rel="noopener">
       📗 LINEで送る
     </a>
-    <a class="hero-share-btn btn-fb" id="share-fb" href="#" target="_blank" rel="noopener">
+    <a class="hero-share-btn btn-fb" id="share-fb" onclick="trackShare('Facebook','hero')" href="#" target="_blank" rel="noopener">
       Facebook
     </a>
-    <button class="hero-share-btn btn-copy" id="share-copy" onclick="copyLink(this)">
+    <button class="hero-share-btn btn-copy" id="share-copy" onclick="copyLink(this,'hero')">
       🔗 リンクをコピー
     </button>
   </div>
@@ -1221,10 +1221,10 @@
 <!-- ── FLOATING SHARE ── -->
 <div class="float-share">
   <div class="float-share-menu" id="float-menu">
-    <a class="float-btn fb-x" id="float-x" href="#" target="_blank" rel="noopener">𝕏 X でシェア</a>
-    <a class="float-btn fb-line" id="float-line" href="#" target="_blank" rel="noopener">📗 LINE で送る</a>
-    <a class="float-btn fb-fb" id="float-fb" href="#" target="_blank" rel="noopener">f Facebook</a>
-    <button class="float-btn fb-copy" id="float-copy" onclick="copyLink(this)">🔗 リンクをコピー</button>
+    <a class="float-btn fb-x" id="float-x" onclick="trackShare('X','float')" href="#" target="_blank" rel="noopener">𝕏 X でシェア</a>
+    <a class="float-btn fb-line" id="float-line" onclick="trackShare('LINE','float')" href="#" target="_blank" rel="noopener">📗 LINE で送る</a>
+    <a class="float-btn fb-fb" id="float-fb" onclick="trackShare('Facebook','float')" href="#" target="_blank" rel="noopener">f Facebook</a>
+    <button class="float-btn fb-copy" id="float-copy" onclick="copyLink(this,'float')">🔗 リンクをコピー</button>
   </div>
   <button class="float-share-toggle" id="float-toggle" onclick="toggleFloatShare()" title="シェアする">
     <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
@@ -2090,7 +2090,12 @@
   })();
 
   // ── リンクコピー ──
-  function copyLink(btn) {
+  function trackShare(method, loc) {
+    if (typeof gtag !== 'undefined') gtag('event', 'share', { method: method, content_type: 'page', location: loc });
+  }
+
+  function copyLink(btn, loc) {
+    trackShare('copy_link', loc || 'unknown');
     navigator.clipboard.writeText(window.location.href).then(function() {
       var orig = btn.textContent;
       btn.textContent = '✅ コピーしました';
@@ -2117,6 +2122,7 @@
     var menu = document.getElementById('float-menu');
     var btn  = document.getElementById('float-toggle');
     var isOpen = menu.classList.toggle('open');
+    if (isOpen) trackShare('menu_open', 'float');
     btn.textContent = isOpen ? '✕' : '📤';
   }
 
