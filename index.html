@@ -439,6 +439,18 @@
     background: linear-gradient(180deg, #C0392B, #E09C20, #27AE7A, #1A8FA0);
   }
   .ptl-item { position: relative; margin-bottom: 22px; }
+  /* アコーディオン：過去の経緯 */
+  .ptl-history.collapsed { display: none; }
+  .ptl-history-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; background: none;
+    border: 1.5px dashed rgba(92,111,122,0.5); border-radius: 10px;
+    padding: 9px 16px; margin-bottom: 18px;
+    font-size: 0.78rem; font-weight: 700; color: var(--gray);
+    cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    font-family: inherit; letter-spacing: 0.02em;
+  }
+  .ptl-history-toggle:hover { background: rgba(0,0,0,0.035); border-color: var(--gray); }
   .ptl-dot {
     position: absolute;
     left: -26px; top: 5px;
@@ -1368,6 +1380,10 @@
     <!-- Political timeline -->
     <h3 style="font-size:1rem; font-weight:800; margin-bottom:20px; color:var(--dark);">📅 「なぜ通れないか」の経緯を時系列で</h3>
     <div class="ptl">
+      <button class="ptl-history-toggle" id="ptl-toggle" onclick="togglePtlHistory()">
+        📅 2月28日〜3月29日の経緯を見る（12件）▼
+      </button>
+      <div class="ptl-history collapsed" id="ptl-history">
       <div class="ptl-item">
         <div class="ptl-dot dot-red"></div>
         <div class="ptl-date">2026年2月28日</div>
@@ -1476,6 +1492,7 @@
           仏ヴォー・ド・セルネーで開催されたG7外相会議で共同声明を採択。英・独・仏・伊・加・日を含む 30カ国以上が戦後の海峡再開支援を表明。米ルビオ国務長官は戦後のホルムズ回巳計画を提示。民間死者への攻撃停止も一致要請。
         </div>
       </div>
+      </div><!-- /.ptl-history -->
       <div class="ptl-item">
         <div class="ptl-dot dot-red"></div>
         <div class="ptl-date">2026年3月30〜31日</div>
@@ -2146,6 +2163,16 @@
       btn.textContent = '✅ コピーしました';
       setTimeout(function() { btn.textContent = '🔗 リンクをコピー'; }, 2000);
     });
+  }
+
+  // ── タイムライン履歴アコーディオン ──
+  function togglePtlHistory() {
+    var hist = document.getElementById('ptl-history');
+    var btn  = document.getElementById('ptl-toggle');
+    var isCollapsed = hist.classList.toggle('collapsed');
+    btn.textContent = isCollapsed
+      ? '📅 2月28日〜3月29日の経緯を見る（12件）▼'
+      : '📅 2月28日〜3月29日の経緯を閉じる ▲';
   }
 
   // ── フローティングシェアトグル ──
