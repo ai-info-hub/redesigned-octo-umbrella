@@ -2099,7 +2099,15 @@
   // ════════════════════════════════════════
   // ✏️  毎日ここだけ更新する変数
   var SHARE_DATE      = '4月1日';
+  var SHARE_WEEK      = '5';
   var SHARE_HIGHLIGHT = '4/6がトランプのイランへの期限';
+  // Xシェアボタンを動的に更新
+  (function(){
+    var shareText = '》' + SHARE_DATE + '更新《ホルムズ海峺e封鎖' + SHARE_WEEK + '週目。' + SHARE_HIGHLIGHT + '。透析患者 34万人・45隻の船員・各国の計画停電まで、政治に詳しくなくても5分でわかる解説。';
+    var xUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + '
+https://ai-info-hub.github.io/redesigned-octo-umbrella/');
+    document.querySelectorAll('.btn-x').forEach(function(el){ el.href = xUrl; });
+  })();
   // ════════════════════════════════════════
 
   // ── シェアURL生成 ──
