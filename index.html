@@ -14,13 +14,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/">
 <meta property="og:title" content="ホルムズ海峡と日本 — あなたの生活に何が起きているか">
-<meta property="og:description" content="ホルムズ海峡の事実上の封鎖が日本のエネルギー・物価・産業に与える影響を分かりやすく解説。最新情報を毎日更新。">
+<meta property="og:description" content="【4月2日更新】英国が35カ国でホルムズ再開国際会議。封鎖が日本のエネルギー・物価・医療に与える影響を毎日解説。">
 <meta property="og:image" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ホルムズ海峡と日本 — あなたの生活に何が起きているか">
-<meta name="twitter:description" content="ホルムズ海峡の事実上の封鎖が日本のエネルギー・物価・産業に与える影響を分かりやすく解説。最新情報を毎日更新。">
+<meta name="twitter:description" content="【4月2日更新】英国が35カ国でホルムズ再開国際会議。封鎖が日本のエネルギー・物価・医療に与える影響を毎日解説。">
 <meta name="twitter:image" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/ogp.png">
 
 <meta charset="UTF-8">
@@ -2125,17 +2125,17 @@
   // ════════════════════════════════════════
   // ✏️  毎日ここだけ更新する変数
   var SHARE_DATE      = '4月2日';
-  var SHARE_HIGHLIGHT = 'トランプ停戦条件にホルムズ再開要求／4月6日期限迫る';  // ════════════════════════════════════════
+  var   var SHARE_HIGHLIGHT = '英国が35カ国でホルムズ再開国際会議・4/6期限まで残り4日';
 
   // ── シェアURL生成 ──
   (function() {
     var title = encodeURIComponent('ホルムズ海峡が止まっている。あなたの生活に何が起きているか');
     var url   = encodeURIComponent(window.location.href);
-    var text  = encodeURIComponent('ホルムズ海峡封鎖4週目。透析患者34万人・45隻の船員・各国の計画停電まで、政治に詳しくなくても5分でわかる解説。');
+        var text  = encodeURIComponent('【' + SHARE_DATE + '更新】ホルムズ海峡封鎖5週目。' + SHARE_HIGHLIGHT + '。透析患者34万人・45隻の船員・各国の計画停電まで、政治に詳しくなくても5分でわかる解説。')
 
     var xUrl    = 'https://twitter.com/intent/tweet?text=' + text + '%0A' + url;
     var lineUrl = 'https://line.me/R/msg/text/?' + text + '%0A' + url;
-    var fbUrl   = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    var fbUrl   = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + text;
 
     // hero buttons
     document.getElementById('share-x').href    = xUrl;
