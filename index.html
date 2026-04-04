@@ -2083,7 +2083,7 @@
   </div>
 
   <div class="hl-box">
-    <strong>💡 現時点（3月29日）の状況</strong>
+    <strong>💡 現時点（<span id="scenario-date">3月29日</span>）の状況</strong>
     交渉は継続中。日本船籍への通過許可やタンカー10隻の解放は好材料ですが、全面解除ではありません。3つのシナリオのうち「中程度」を念頭に、医療・エネルギー双方で準備が必要な状況です。
   </div>
 </section>
@@ -2221,6 +2221,18 @@
       document.getElementById('float-toggle').textContent = '📤';
     }
   });
+</script>
+
+<script>
+// セクション6の日付をヒーローの最終更新日から自動同期
+(function(){
+  var hero = document.getElementById("last-updated");
+  var sd = document.getElementById("scenario-date");
+  if(hero && sd){
+    var m = hero.textContent.match(/(\d+月\d+日)/);
+    if(m) sd.textContent = m[1];
+  }
+})();
 </script>
 </body>
 </html>
