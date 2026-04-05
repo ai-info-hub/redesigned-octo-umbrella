@@ -1,3 +1,2250 @@
+ <!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N359DQ9B59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N359DQ9B59');
+</script>
+
+<!-- OGP / Social Share -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/">
+<meta property="og:title" content="ãã«ã ãºæµ·å³¡ã¨æ¥æ¬ â ããªãã®çæ´»ã«ä½ãèµ·ãã¦ããã">
+<meta property="og:description" content="ã4æ2æ¥æ´æ°ãè±å½ã35ã«å½ã§ãã«ã ãºåéå½éä¼è­°ãå°éãæ¥æ¬ã®ã¨ãã«ã®ã¼ã»ç©ä¾¡ã»å»çã«ä¸ããå½±é¿ãæ¯æ¥è§£èª¬ã">
+<meta property="og:image" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ãã«ã ãºæµ·å³¡ã¨æ¥æ¬ â ããªãã®çæ´»ã«ä½ãèµ·ãã¦ããã">
+<meta name="twitter:description" content="ã4æ2æ¥æ´æ°ãè±å½ã35ã«å½ã§ãã«ã ãºåéå½éä¼è­°ãå°éãæ¥æ¬ã®ã¨ãã«ã®ã¼ã»ç©ä¾¡ã»å»çã«ä¸ããå½±é¿ãæ¯æ¥è§£èª¬ã">
+<meta name="twitter:image" content="https://ai-info-hub.github.io/redesigned-octo-umbrella/ogp.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ãã«ã ãºæµ·å³¡ã¨æ¥æ¬ â ããªãã®çæ´»ã«ä½ãèµ·ãã¦ããã</title>
+<style>
+  :root {
+    --red: #e63946;
+    --orange: #f4a261;
+    --yellow: #e9c46a;
+    --green: #52b788;
+    --blue: #457b9d;
+    --dark: #1d3557;
+    --light: #f1faee;
+    --gray: #6c757d;
+    --bg: #f4f6f8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: #1a1a2e;
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  /* ââ STICKY NAV ââ */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0D3349;
+    border-bottom: 3px solid #E09C20;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  .sticky-nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+  .sticky-nav-inner::-webkit-scrollbar { display: none; }
+  .sticky-nav-label {
+    display: flex;
+    align-items: center;
+    padding: 0 14px 0 16px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #E09C20;
+    letter-spacing: 0.1em;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    flex-shrink: 0;
+    gap: 5px;
+  }
+  .sticky-nav a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 14px 13px;
+    letter-spacing: 0.02em;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+  }
+  .sticky-nav a:hover {
+    color: #E09C20;
+    background: rgba(255,255,255,0.06);
+    border-bottom-color: #E09C20;
+  }
+
+  /* ââ AI DISCLAIMER ââ */
+  .ai-disclaimer {
+    background: #fffbeb;
+    border-bottom: 1px solid #fcd34d;
+    padding: 5px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.73rem;
+    color: #78350f;
+    line-height: 1.5;
+  }
+  .ai-disclaimer-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .ai-disclaimer strong { font-weight: 800; }
+  .ai-disclaimer a { color: #b45309; }
+
+  /* ââ STATUS BANNER ââ */
+  .status-banner {
+    background: linear-gradient(90deg, #8B1E1E, #C0392B);
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .status-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.22);
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-right: 6px;
+    font-size: 0.75rem;
+  }
+
+  /* ââ HERO ââ */
+  .hero {
+    background: linear-gradient(150deg, #030D18 0%, #0D3349 60%, #1A5070 100%);
+    color: white;
+    padding: 52px 20px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(224,156,32,0.12) 0%, transparent 65%);
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    animation: pulse-badge 2.5s infinite;
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes pulse-badge {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.65; }
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 5vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 em { color: #E09C20; font-style: normal; }
+  .hero-sub {
+    font-size: clamp(0.88rem, 2.5vw, 1.05rem);
+    opacity: 0.82;
+    max-width: 580px;
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-date { font-size: 0.72rem; opacity: 0.5; position: relative; z-index: 1; margin-bottom: 24px; }
+
+  /* ââ HERO SHARE BUTTONS ââ */
+  .hero-share {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 24px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity 0.15s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .hero-share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .hero-share-btn:active { transform: translateY(0); }
+  .btn-x       { background: #000; color: white; }
+  .btn-line    { background: #06c755; color: white; }
+  .btn-fb      { background: #1877f2; color: white; }
+  .btn-copy    { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+  .btn-copy.copied { background: #27AE7A; border-color: #27AE7A; }
+
+  /* ââ FLOATING SHARE (mobile) ââ */
+  .float-share {
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .float-share-toggle {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #E09C20;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+  .float-share-toggle:hover { transform: scale(1.08); }
+  .float-share-menu {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .float-share-menu.open { display: flex; }
+  .float-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px 9px 12px;
+    border-radius: 24px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    transition: opacity 0.15s;
+    white-space: nowrap;
+    animation: slideIn 0.2s ease;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .float-btn:hover { opacity: 0.88; }
+  .float-btn.fb-x    { background: #000; }
+  .float-btn.fb-line { background: #06c755; }
+  .float-btn.fb-fb   { background: #1877f2; }
+  .float-btn.fb-copy { background: #0D3349; }
+
+  /* ââ SECTION WRAPPER ââ */
+  .section {
+    padding: 56px 16px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .section-head {
+    margin-bottom: 32px;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    background: rgba(69,123,157,0.1);
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .section-desc { font-size: 0.88rem; color: var(--gray); }
+
+  /* ââ DIVIDER ââ */
+  .band {
+    height: 3px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--orange) 50%, transparent 100%);
+    max-width: 860px;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  /* ================================================================
+     SECTION 1: MAP / ROUTE
+  ================================================================ */
+  .map-dark {
+    background: linear-gradient(175deg, #030D18 0%, #0D2840 100%);
+    padding: 56px 16px;
+    color: white;
+  }
+  .map-inner { max-width: 860px; margin: 0 auto; }
+  .map-h { text-align: center; font-size: clamp(1.15rem,3vw,1.45rem); font-weight: 800; margin-bottom: 6px; }
+  .map-sub { text-align: center; color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-bottom: 36px; }
+
+  .route-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    padding-top: 22px;
+  }
+  .rf-node {
+    text-align: center;
+    padding: 10px 8px;
+    min-width: 80px;
+  }
+  .rf-icon { font-size: 2rem; display: block; margin-bottom: 4px; }
+  .rf-name { font-size: 0.75rem; font-weight: 700; color: white; }
+  .rf-sub { font-size: 0.67rem; color: rgba(255,255,255,0.5); }
+  .rf-arrow { color: #E09C20; font-size: 1.4rem; padding: 0 2px; flex-shrink: 0; }
+  .rf-block {
+    background: rgba(230,57,70,0.2);
+    border: 1.5px solid var(--red);
+    border-radius: 14px;
+    padding: 12px 14px;
+    text-align: center;
+    position: relative;
+  }
+  .rf-block-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: white;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  @media (min-width: 500px) {
+    .stat-row { grid-template-columns: repeat(4, 1fr); }
+  }
+  .stat-tile {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 18px 12px;
+    text-align: center;
+  }
+  .stat-num { font-size: 1.9rem; font-weight: 900; color: #E09C20; line-height: 1; }
+  .stat-unit { font-size: 0.85rem; font-weight: 400; }
+  .stat-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 5px; line-height: 1.4; }
+
+  /* ================================================================
+     SECTION 2: WHY CAN'T JAPAN PASS (POLITICAL TIMELINE)
+  ================================================================ */
+  .politics-bg {
+    background: #fff;
+    padding: 56px 16px;
+  }
+  .politics-inner { max-width: 860px; margin: 0 auto; }
+
+  .speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .speaker-card {
+    border-radius: 16px;
+    padding: 18px;
+    font-size: 0.83rem;
+  }
+  .speaker-card.japan { background: #e8f4fd; border-left: 4px solid #2196f3; }
+  .speaker-card.us { background: #fff3e0; border-left: 4px solid #ff9800; }
+  .speaker-card.iran { background: #fce4ec; border-left: 4px solid #e91e63; }
+  .speaker-card.intl { background: #e8f5e9; border-left: 4px solid #4caf50; }
+  .speaker-flag { font-size: 1.5rem; margin-bottom: 6px; display: block; }
+  .speaker-name { font-weight: 800; font-size: 0.85rem; margin-bottom: 4px; }
+  .speaker-role { font-size: 0.7rem; color: var(--gray); margin-bottom: 10px; }
+  .speaker-quote {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #333;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 8px;
+    margin-top: 4px;
+  }
+
+  /* Full political timeline */
+  .ptl { position: relative; padding-left: 30px; }
+  .ptl::before {
+    content: '';
+    position: absolute;
+    left: 11px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #C0392B, #E09C20, #27AE7A, #1A8FA0);
+  }
+  .ptl-item { position: relative; margin-bottom: 22px; }
+  /* ã¢ã³ã¼ãã£ãªã³ï¼éå»ã®çµç·¯ */
+  .ptl-history.collapsed { display: none; }
+  .ptl-history-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; background: none;
+    border: 1.5px dashed rgba(92,111,122,0.5); border-radius: 10px;
+    padding: 9px 16px; margin-bottom: 18px;
+    font-size: 0.78rem; font-weight: 700; color: var(--gray);
+    cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    font-family: inherit; letter-spacing: 0.02em;
+  }
+  .ptl-history-toggle:hover { background: rgba(0,0,0,0.035); border-color: var(--gray); }
+  .ptl-dot {
+    position: absolute;
+    left: -26px; top: 5px;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+  }
+  .dot-red { background: var(--red); }
+  .dot-orange { background: var(--orange); }
+  .dot-blue { background: var(--blue); }
+  .dot-green { background: var(--green); }
+  .dot-purple { background: #7b2d8b; }
+  .ptl-date {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+  }
+  .ptl-card {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+  .ptl-card strong { display: block; font-size: 0.9rem; margin-bottom: 4px; }
+  .ptl-who {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+  .who-jp { background: #bbdefb; color: #1565c0; }
+  .who-us { background: #ffe0b2; color: #e65100; }
+  .who-ir { background: #fce4ec; color: #880e4f; }
+  .who-intl { background: #c8e6c9; color: #2e7d32; }
+
+  .wall-box {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    border: 1.5px solid #ffcc02;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 24px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+  }
+  .wall-box h4 { font-size: 0.95rem; margin-bottom: 10px; color: #b45309; }
+
+  /* ââ DIPLOMATIC GAP BOX ââ */
+  .diplo-gap {
+    margin-top: 32px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1.5px solid #ddd;
+  }
+  .diplo-gap-header {
+    background: #0D3349;
+    color: white;
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .diplo-gap-header .fact-badge {
+    background: rgba(255,255,255,0.18);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .diplo-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 520px) {
+    .diplo-cols { grid-template-columns: 1fr; }
+  }
+  .diplo-col {
+    padding: 20px;
+    font-size: 0.83rem;
+    line-height: 1.75;
+  }
+  .diplo-col.iran-side {
+    background: #fff0f0;
+    border-right: 1px solid #eee;
+  }
+  .diplo-col.japan-side {
+    background: #f0f4ff;
+  }
+  @media (max-width: 520px) {
+    .diplo-col.iran-side { border-right: none; border-bottom: 1px solid #eee; }
+  }
+  .diplo-col-head {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .diplo-col.iran-side .diplo-col-head { color: #c0392b; }
+  .diplo-col.japan-side .diplo-col-head { color: #1565c0; }
+  .diplo-quote {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 0.82rem;
+    border-left: 3px solid;
+    line-height: 1.7;
+  }
+  .diplo-col.iran-side .diplo-quote { border-color: #e74c3c; }
+  .diplo-col.japan-side .diplo-quote { border-color: #3498db; }
+  .diplo-source {
+    font-size: 0.7rem;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+  .diplo-gap-footer {
+    background: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    color: #444;
+    line-height: 1.75;
+  }
+  .diplo-gap-footer strong { color: #c0392b; }
+
+  /* ================================================================
+     SECTION 3: STRANDED SHIPS
+  ================================================================ */
+  .ships-bg {
+    background: linear-gradient(175deg, #0f2944 0%, #1a3a5c 100%);
+    padding: 56px 16px;
+    color: white;
+  }
+  .ships-inner { max-width: 860px; margin: 0 auto; }
+
+  .ships-stat-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  @media (min-width: 500px) {
+    .ships-stat-row { grid-template-columns: repeat(4, 1fr); }
+  }
+  .ships-tile {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 12px;
+    text-align: center;
+  }
+  .ships-num { font-size: 1.8rem; font-weight: 900; color: #90caf9; line-height: 1; }
+  .ships-unit { font-size: 0.8rem; font-weight: 400; }
+  .ships-lbl { font-size: 0.7rem; color: rgba(255,255,255,0.55); margin-top: 4px; line-height: 1.4; }
+
+  .testimony-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 16px;
+  }
+  .testimony-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .testimony-icon { font-size: 1.8rem; }
+  .testimony-meta { font-size: 0.78rem; }
+  .testimony-name { font-weight: 700; font-size: 0.9rem; color: #90caf9; }
+  .testimony-text { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.85); }
+  .testimony-quote {
+    font-style: italic;
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid #E09C20;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .ships-issues {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .issue-tile {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+  .issue-icon { font-size: 1.5rem; display: block; margin-bottom: 8px; }
+  .issue-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
+  .issue-desc { color: rgba(255,255,255,0.6); font-size: 0.78rem; }
+
+  /* ================================================================
+     SECTION 4: DIALYSIS / MEDICAL
+  ================================================================ */
+  .medical-bg {
+    background: #fff;
+    padding: 56px 16px;
+  }
+  .medical-inner { max-width: 860px; margin: 0 auto; }
+
+  .alert-banner {
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    color: white;
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 2rem; flex-shrink: 0; }
+  .alert-title { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+  .alert-body { font-size: 0.83rem; line-height: 1.7; opacity: 0.9; }
+  .alert-source { font-size: 0.7rem; opacity: 0.65; margin-top: 6px; }
+
+  .naphtha-flow {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+  .naphtha-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 14px; }
+  .nf-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.83rem;
+  }
+  .nf-num {
+    background: var(--dark);
+    color: white;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .nf-arrow { color: var(--gray); font-size: 0.8rem; }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .tg-card {
+    border-radius: 14px;
+    padding: 18px;
+    font-size: 0.82rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .tg-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .tg-now { background: #fff3e0; border: 1px solid #ffcc80; }
+  .tg-now::before { background: #ff9800; }
+  .tg-mid { background: #fce4ec; border: 1px solid #f48fb1; }
+  .tg-mid::before { background: #e91e63; }
+  .tg-bad { background: #ffebee; border: 1px solid #ef9a9a; }
+  .tg-bad::before { background: var(--red); }
+  .tg-when { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 6px; }
+  .tg-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 6px; }
+  .tg-body { font-size: 0.8rem; color: #444; line-height: 1.6; }
+
+  .medical-note {
+    background: #f3f4f6;
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 0.83rem;
+    line-height: 1.75;
+    border-left: 4px solid var(--blue);
+  }
+  .medical-note strong { color: var(--dark); }
+
+  /* ================================================================
+     SECTION 5: RESERVES
+  ================================================================ */
+  .reserve-bg {
+    background: linear-gradient(135deg, #e3f2fd 0%, #dce8f5 100%);
+    padding: 56px 16px;
+  }
+  .reserve-inner { max-width: 860px; margin: 0 auto; }
+
+  .res-bar-group {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .res-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .res-track {
+    background: #e8eaf0;
+    border-radius: 6px;
+    height: 20px;
+    overflow: hidden;
+  }
+  .res-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+  }
+  .rf-gov { background: linear-gradient(90deg, #1565c0, #1976d2); width: 57%; }
+  .rf-priv { background: linear-gradient(90deg, #2e7d32, #388e3c); width: 40%; }
+  .rf-joint { background: linear-gradient(90deg, #e65100, #f4511e); width: 3%; }
+  .res-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--gray);
+  }
+  .res-leg-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; }
+
+  .reserve-warn {
+    background: white;
+    border-left: 4px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .reserve-warn strong { color: var(--red); }
+
+  /* ================================================================
+     SECTION 5.5: WORLD POLICIES
+  ================================================================ */
+  .world-bg {
+    background: #0f1f33;
+    padding: 56px 16px;
+    color: white;
+  }
+  .world-inner { max-width: 860px; margin: 0 auto; }
+
+  .severity-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    font-size: 0.76rem;
+  }
+  .sev-item { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.65); }
+  .sev-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .sev-critical { background: #ef4444; }
+  .sev-severe   { background: #f97316; }
+  .sev-moderate { background: #eab308; }
+  .sev-alert    { background: #3b82f6; }
+
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .country-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.15s;
+  }
+  .country-card:hover { transform: translateY(-3px); }
+  .country-card-head {
+    padding: 14px 16px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .country-flag { font-size: 1.6rem; flex-shrink: 0; }
+  .country-name { font-weight: 800; font-size: 0.9rem; }
+  .country-dep  { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
+  .sev-pill {
+    margin-left: auto;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pill-critical { background: rgba(239,68,68,0.25); color: #fca5a5; border: 1px solid rgba(239,68,68,0.4); }
+  .pill-severe   { background: rgba(249,115,22,0.25); color: #fdba74; border: 1px solid rgba(249,115,22,0.4); }
+  .pill-moderate { background: rgba(234,179,8,0.25);  color: #fde047; border: 1px solid rgba(234,179,8,0.4); }
+  .pill-alert    { background: rgba(59,130,246,0.25); color: #93c5fd; border: 1px solid rgba(59,130,246,0.4); }
+
+  .country-body { padding: 12px 16px 14px; }
+  .policy-list { list-style: none; }
+  .policy-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    line-height: 1.5;
+  }
+  .policy-list li:last-child { border-bottom: none; }
+  .policy-list li .pi { font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+
+  .world-note {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+  }
+  .world-note strong { color: rgba(255,255,255,0.9); }
+
+  /* ================================================================
+     SECTION 6: DAILY IMPACT
+  ================================================================ */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .impact-card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    border-top: 4px solid;
+  }
+  .ic-fuel { border-color: var(--red); }
+  .ic-elec { border-color: var(--orange); }
+  .ic-food { border-color: #b45309; }
+  .ic-ind  { border-color: var(--blue); }
+  .impact-ico { font-size: 2rem; margin-bottom: 10px; display: block; }
+  .impact-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 8px; }
+  .impact-now { font-size: 0.78rem; color: var(--gray); margin-bottom: 10px; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  .bar-lbl { font-size: 0.72rem; color: var(--gray); min-width: 52px; }
+  .bar-track {
+    flex: 1;
+    background: #eee;
+    border-radius: 4px;
+    height: 7px;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-pct { font-size: 0.75rem; font-weight: 700; min-width: 46px; text-align: right; }
+  .impact-note {
+    font-size: 0.76rem;
+    color: var(--gray);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    line-height: 1.6;
+  }
+
+  /* ================================================================
+     SECTION 7: SCENARIOS
+  ================================================================ */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .sc-card {
+    border-radius: 18px;
+    padding: 22px;
+    border: 1.5px solid;
+  }
+  .sc-good { background: #f0fdf4; border-color: #86efac; }
+  .sc-mid  { background: #fff7ed; border-color: #fdba74; }
+  .sc-bad  { background: #fff1f2; border-color: #fca5a5; }
+  .sc-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .sc-good .sc-tag { background: #22c55e; color: white; }
+  .sc-mid  .sc-tag { background: #f97316; color: white; }
+  .sc-bad  .sc-tag { background: var(--red); color: white; }
+  .sc-title { font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+  .sc-when { font-size: 0.75rem; color: var(--gray); margin-bottom: 12px; }
+  .sc-list { list-style: none; }
+  .sc-list li {
+    font-size: 0.83rem;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 7px;
+    align-items: flex-start;
+    line-height: 1.55;
+  }
+  .sc-list li:last-child { border-bottom: none; }
+  .sc-list li::before { content: 'â¸'; font-size: 0.6rem; opacity: 0.45; margin-top: 4px; flex-shrink: 0; }
+
+  /* ================================================================
+     SECTION 8: FAQ
+  ================================================================ */
+  .faq-list { display: grid; gap: 14px; }
+  .faq-item { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .faq-q {
+    padding: 16px 18px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .faq-q-badge {
+    background: var(--dark);
+    color: white;
+    width: 22px; height: 22px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-a {
+    padding: 0 18px 16px 50px;
+    font-size: 0.84rem;
+    color: #444;
+    line-height: 1.75;
+  }
+
+  /* ââ FOOTER ââ */
+  .footer {
+    background: #030D18;
+    color: white;
+    padding: 40px 16px;
+    text-align: center;
+  }
+  .footer h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .footer p { font-size: 0.8rem; opacity: 0.6; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .sources {
+    margin-top: 18px;
+    font-size: 0.73rem;
+    opacity: 0.5;
+    line-height: 2;
+  }
+  .sources a { color: #90caf9; text-decoration: none; margin: 0 4px; }
+  .sources a:hover { text-decoration: underline; }
+
+  /* ââ HIGHLIGHT BOX ââ */
+  .hl-box {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    border: 1px solid #ffcc80;
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 0.85rem;
+    margin-top: 24px;
+    line-height: 1.75;
+  }
+  .hl-box strong { color: #b45309; display: block; margin-bottom: 5px; font-size: 0.9rem; }
+
+
+  /* ââ ESCALATION SECTION ââ */
+  .escalation-section {
+    background: linear-gradient(160deg, #1c0a0a 0%, #2e1010 50%, #1a0816 100%);
+    padding: 44px 16px 36px;
+  }
+  .esc-inner { max-width: 960px; margin: 0 auto; }
+  .esc-header { text-align: center; margin-bottom: 28px; }
+  .esc-label {
+    display: inline-block;
+    background: rgba(192,57,43,0.25);
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.5);
+    border-radius: 4px;
+    padding: 3px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .esc-title {
+    font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.4;
+  }
+  .esc-track {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 6px;
+  }
+  .esc-step {
+    flex: 1;
+    min-width: 130px;
+    padding: 16px 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .esc-now  { background: rgba(230,126,34,0.13); border: 1px solid rgba(230,126,34,0.35); }
+  .esc-near { background: rgba(211,84,0,0.18);   border: 1px solid rgba(211,84,0,0.45); }
+  .esc-mid  { background: rgba(192,57,43,0.22);   border: 1px solid rgba(192,57,43,0.55); }
+  .esc-worst{ background: rgba(100,0,0,0.35);     border: 1.5px solid rgba(192,57,43,0.85); }
+  .esc-time {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: rgba(255,200,100,0.9);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    white-space: nowrap;
+  }
+  .esc-ico { font-size: 1.7rem; margin-bottom: 7px; }
+  .esc-main {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .esc-detail {
+    font-size: 0.67rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.55;
+    margin-top: auto;
+  }
+  .esc-arrow {
+    color: rgba(255,100,100,0.5);
+    font-size: 1.1rem;
+    align-self: center;
+    flex-shrink: 0;
+    padding: 0 2px;
+  }
+  .esc-note {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .esc-note a { color: rgba(255,180,100,0.75); text-decoration: none; }
+  .esc-worst-badge {
+    display: inline-block;
+    background: #c0392b;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 800;
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+  }
+
+    /* ââ MOBILE ââ */
+  @media (max-width: 540px) {
+    .route-flow {
+      flex-direction: column;
+      align-items: center;
+      overflow-x: visible;
+      gap: 0;
+    }
+    .rf-arrow {
+      display: block !important;
+      transform: rotate(90deg);
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .esc-track { flex-direction: column; align-items: center; gap: 0; }
+    .esc-step { width: 100%; max-width: 340px; }
+    .esc-arrow { transform: rotate(90deg); font-size: 1.3rem; margin: 6px 0; }
+        .rf-node { min-width: unset; }
+    .alert-banner { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ââ AI DISCLAIMER ââ -->
+<div class="ai-disclaimer">
+  <div class="ai-disclaimer-icon">ð¤</div>
+  <div><strong>AIã«ããè¦ç´</strong>ï¼Claude ï¼ ã­ã¤ã¿ã¼ã¯BBã»æ¥çµã¯NHKãªã©ï¼ï½ åå®¹ã¯åèæå ±ã§ããéè¦ãªå¤æ­ã®åã«ä¸æ¬¡ã½ã¼ã¹ããç¢ºèªãã ããã</div>
+</div>
+
+<!-- ââ STATUS BANNER ââ -->
+<div class="status-banner">
+  <span class="status-badge">ð´ é²è¡ä¸­</span>
+  ãã«ã ãºæµ·å³¡ãäºå®ä¸ã®å°é6é±ç®ç¶ç¶ä¸­ï¼2026å¹´4æ4æ¥ç¾å¨ï¼
+</div>
+
+<!-- ââ STICKY NAV ââ -->
+<nav class="sticky-nav">
+  <div class="sticky-nav-inner">
+    <div class="sticky-nav-label">ð ç®æ¬¡</div>
+    <a href="#why">ð ãªãéããªãï¼</a>
+    <a href="#ships">ð¢ 45é»ã®è¹å¡</a>
+    <a href="#medical">ð¥ éæ34ä¸äºº</a>
+    <a href="#reserve">ð¢ åèç¶æ³</a>
+    <a href="#world">ð åå½ã®å¯¾å¿</a>
+    <a href="#impact">ð° çæ´»ã¸ã®å½±é¿</a>
+    <a href="#scenario">ð® ä»å¾ã®ã·ããªãª</a>
+    <a href="#faq">â ããããè³ªå</a>
+  </div>
+</nav>
+
+<!-- ââ HERO ââ -->
+<section class="hero">
+  <div class="hero-eyebrow">â  ä»ãããªãã®çæ´»ã«é¢ãããã¨ãèµ·ãã¦ãã¾ã</div>
+  <h1>ãã«ã ãºæµ·å³¡ã<br><em>æ­¢ã¾ã£ã¦ãã</em>ã<br>ããã£ã¦ä½ï¼</h1>
+  <p class="hero-sub">ä¸­æ±ã®å°ããªæµ·å³¡ã®åºæ¥äºããããªãã®ã¬ã½ãªã³ã»é»æ°ä»£ã»éææ²»çã«ã¾ã§å½±é¿ããçç±ããæ¿æ²»ã«è©³ãããªãã¦ã5åã§ãããããã«è§£èª¬ãã¾ãã</p>
+  <p class="hero-date" id="last-updated">æçµæ´æ°: 2026å¹´4æ4æ¥ ï¼ æå ±æº: ã­ã¤ã¿ã¼ã»Bloombergã»æ¥çµã»NHKãªã©</p>
+  <div class="hero-share">
+    <a class="hero-share-btn btn-x" id="share-x" onclick="trackShare('X','hero')" href="#" target="_blank" rel="noopener">
+      ð ã§ã·ã§ã¢
+    </a>
+    <a class="hero-share-btn btn-line" id="share-line" onclick="trackShare('LINE','hero')" href="#" target="_blank" rel="noopener">
+      ð LINEã§éã
+    </a>
+    <a class="hero-share-btn btn-fb" id="share-fb" onclick="trackShare('Facebook','hero')" href="#" target="_blank" rel="noopener">
+      Facebook
+    </a>
+    <button class="hero-share-btn btn-copy" id="share-copy" onclick="copyLink(this,'hero')">
+      ð ãªã³ã¯ãã³ãã¼
+    </button>
+  </div>
+</section>
+
+<!-- ââ FLOATING SHARE ââ -->
+<div class="float-share">
+  <div class="float-share-menu" id="float-menu">
+    <a class="float-btn fb-x" id="float-x" onclick="trackShare('X','float')" href="#" target="_blank" rel="noopener">ð X ã§ã·ã§ã¢</a>
+    <a class="float-btn fb-line" id="float-line" onclick="trackShare('LINE','float')" href="#" target="_blank" rel="noopener">ð LINE ã§éã</a>
+    <a class="float-btn fb-fb" id="float-fb" onclick="trackShare('Facebook','float')" href="#" target="_blank" rel="noopener">f Facebook</a>
+    <button class="float-btn fb-copy" id="float-copy" onclick="copyLink(this,'float')">ð ãªã³ã¯ãã³ãã¼</button>
+  </div>
+  <button class="float-share-toggle" id="float-toggle" onclick="toggleFloatShare()" title="ã·ã§ã¢ãã">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+      <span style="font-size:0.5rem;font-weight:800;letter-spacing:0.05em;color:white;">ã·ã§ã¢</span>
+    </div>
+  </button>
+</div>
+
+<!-- ââ LIFE ESCALATION ââ -->
+<section class="escalation-section" id="your-life">
+  <div class="esc-inner">
+    <div class="esc-header">
+      <div class="esc-label">ð¨ ããªãã®çæ´»ã¸ã®å½±é¿</div>
+      <h2 class="esc-title">ãã«ã ãºæµ·å³¡å°éãç¶ãã»ã©ã<br>ããªãã®çæ´»ã¯ãããªã</h2>
+    </div>
+    <div class="esc-track">
+      <div class="esc-step esc-now">
+        <div class="esc-time">â¶ ä»ãã§ã«èµ·ãã¦ãã</div>
+        <div class="esc-ico">â½ð¡</div>
+        <div class="esc-main">ã¬ã½ãªã³ã»é»æ°ä»£ã<br>ä¸ãã£ã¦ãã</div>
+        <div class="esc-detail">ã¬ã½ãªã³ 200åè¶ï¼L<br>é»æ°ä»£ +12ã25%<br>é½å¸ã¬ã¹ +15ã30%</div>
+      </div>
+      <div class="esc-arrow">â¶</div>
+      <div class="esc-step esc-near">
+        <div class="esc-time">â¶ 1ã2ã¶æå¾</div>
+        <div class="esc-ico">ð</div>
+        <div class="esc-main">é£æåã»æ¥ç¨åã<br>ä¸æå¤ä¸ãã</div>
+        <div class="esc-detail">é£è²» æ+2,500ã5,100å<br>éèã»è +5ã10%<br>è¾²æ¥­ã»è¼¸éã³ã¹ãç´æ</div>
+      </div>
+      <div class="esc-arrow">â¶</div>
+      <div class="esc-step esc-mid">
+        <div class="esc-time">â¶ 3ã6ã¶æå¾</div>
+        <div class="esc-ico">ð¥ð¦</div>
+        <div class="esc-main">å»çåã»æ¥ç¨åã®<br>æ£ãç©ºã«ãªã</div>
+        <div class="esc-detail">éæåè·¯ã»æè¡ç¨åãä¸è¶³<br>æ¿åºè£å©éãéçã¸<br>å·¥å ´ã®æ¸ç£ã»ä¼æ¥­ãæ¡å¤§</div>
+      </div>
+      <div class="esc-arrow">â¶</div>
+      <div class="esc-step esc-worst">
+        <div class="esc-worst-badge">ææªã®ã±ã¼ã¹</div>
+        <div class="esc-ico">ð¨</div>
+        <div class="esc-main">çµ¦æ²¹å¶éã»<br>é£æéçµ¦å¶ãç¾å®ã«</div>
+        <div class="esc-detail">ç³æ²¹åèãæ¯æ¸ã«è¿ã¥ã<br>ã³ã­ãç¦ãè¶ããçµæ¸ç¸®å°<br>éææ£è34ä¸äººã«ç´æ¥å½±é¿</div>
+      </div>
+    </div>
+    <p class="esc-note">â² ã·ããªãªã®è©³ç´°ã»æ ¹æ ã¯<a href="#scenario">ãã¡ã</a>ã§ç¢ºèªã§ãã¾ã</p>
+  </div>
+</section>
+
+<!-- ââ MAP ââ -->
+<section class="map-dark">
+  <div class="map-inner">
+    <h2 class="map-h">ðº ä¸çã®ç³æ²¹ã¯ãããéã</h2>
+    <p class="map-sub">ãã«ã ãºæµ·å³¡ ââ å¹ããã54kmã®ãå°çã®ã¨ãã«ã®ã¼ã®å½åããä»ãããè©°ã¾ã£ã¦ããã</p>
+
+    <div class="route-flow">
+      <div class="rf-node">
+        <span class="rf-icon">ð¢</span>
+        <div class="rf-name">ä¸­æ±ã®æ²¹ç°</div>
+        <div class="rf-sub">ãµã¦ã¸ã»UAEã»ã¤ã©ã¯ãªã©</div>
+      </div>
+      <span class="rf-arrow">â</span>
+      <div class="rf-node rf-block">
+        <div class="rf-block-badge">â¡ ç¾å¨ãããå°éä¸­</div>
+        <span class="rf-icon">ð§</span>
+        <div class="rf-name">ãã«ã ãºæµ·å³¡</div>
+        <div class="rf-sub">å¹54km</div>
+      </div>
+      <span class="rf-arrow">â</span>
+      <div class="rf-node">
+        <span class="rf-icon">ð¢</span>
+        <div class="rf-name">ã¤ã³ãæ´</div>
+        <div class="rf-sub">ã¿ã³ã«ã¼ãèªè¡</div>
+      </div>
+      <span class="rf-arrow">â</span>
+      <div class="rf-node">
+        <span class="rf-icon">ð¯ðµ</span>
+        <div class="rf-name">æ¥æ¬ã¸</div>
+        <div class="rf-sub">ã¬ã½ãªã³ã»é»æ°ã»ãã©ã¹ããã¯</div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="stat-num">93<span class="stat-unit">%</span></div>
+        <div class="stat-lbl">æ¥æ¬ã®åæ²¹è¼¸å¥éã®ãã¡ãã«ã ãºæµ·å³¡ãéãå²å</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-num">25<span class="stat-unit">%</span></div>
+        <div class="stat-lbl">ä¸çã®æµ·ä¸ç³æ²¹è²¿æã®ãã¡ãã®æµ·å³¡ãéãå²å</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-num">1æ¥<br><span class="stat-num" style="font-size:1.3rem;">120â5</span><span class="stat-unit">é»</span></div>
+        <div class="stat-lbl">å°éåå¾ã§ã®éèªè¹è¶æ°ã®å¤åï¼æ±æ´çµæ¸ï¼</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-num">4<span class="stat-unit">é±é</span></div>
+        <div class="stat-lbl">ç¾å¨ã®äºå®ä¸ã®å°éãç¶ãã¦ããæé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ WHY CAN'T JAPAN PASS ââ -->
+<section class="politics-bg" id="why">
+  <div class="politics-inner">
+    <div class="section-head">
+      <div class="section-label">SECTION 01</div>
+      <h2 class="section-title">ð ãªãéããªãã®ãï¼<br>åå½ã®åãã¨æ¥æ¬ã®æ¿æã¿</h2>
+      <p class="section-desc">ãä¸­æ±ã®åé¡ã§ããï¼ãã§ã¯ããã¾ãããæ¥æ¬ã¯ã¢ã¡ãªã«ã¨ã¤ã©ã³ã®éã§å³ããç«å ´ã«ç«ãããã¦ãã¾ãã</p>
+    </div>
+
+    <!-- Key players -->
+    <div class="speaker-grid">
+      <div class="speaker-card us">
+        <span class="speaker-flag">ðºð¸</span>
+        <div class="speaker-name">ãã©ã³ãå¤§çµ±é </div>
+        <div class="speaker-role">ç±³å½ ï¼ å¼·ç¡¬æ´¾</div>
+        <div class="speaker-quote">ã48æéä»¥åã«æµ·å³¡ãéæ¾ããªããã°ãã¤ã©ã³ã®é»åã¤ã³ãã©ãå£æ»ããããï¼3/21ï¼ãæ¥æ¬ã«ããè»è¦ãåºãããããåçã®è©¦éç³ã ãã¨å§åã</div>
+      </div>
+      <div class="speaker-card iran">
+        <span class="speaker-flag">ð®ð·</span>
+        <div class="speaker-name">ã¤ã©ã³é©å½é²è¡é</div>
+        <div class="speaker-role">ã¤ã©ã³ ï¼ å°éãå®è¡</div>
+        <div class="speaker-quote">ãæµå¯¾å½ã®è¹è¶ã«å¯¾ãã¦ãã«ã ãºæµ·å³¡ãééãããï¼2/28ï¼ãæ»æãåããã°ãå®å¨å°éã§å¯¾æãããã¨è­¦åã</div>
+      </div>
+      <div class="speaker-card japan">
+        <span class="speaker-flag">ð¯ðµ</span>
+        <div class="speaker-name">é«å¸æ©è é¦ç¸</div>
+        <div class="speaker-role">æ¥æ¬ ï¼ æ¿æã¿ã®ç«å ´</div>
+        <div class="speaker-quote">ãèªè¡ã®å®å¨ç¢ºä¿ã¯éè¦ã ããæ¥æ¬ã®æ³å¾ã®ç¯å²åã§ã§ãããã¨ã»ã§ããªããã¨ããããã¨ãã©ã³ãæ°ã«ä¼éãèªè¡éã®æ´¾é£ã¯æ²æ³ä¸ã®å¶ç´ã§å°é£ã</div>
+      </div>
+      <div class="speaker-card intl">
+        <span class="speaker-flag">ð</span>
+        <div class="speaker-name">å½éé£æºï¼30ãå½ï¼</div>
+        <div class="speaker-role">æ¥è±ä»ç¬ä¼è­å ãªã©</div>
+        <div class="speaker-quote">3/19ã«å±åå£°æãçºåºããã¤ã©ã³ã¯æ©é·æ·è¨­ã»ãã­ã¼ã³æ»æãç´ã¡ã«åæ­¢ããåæ¥­è¹è¶ã®èªè¡ãä¿éãããã¨æ±ããã</div>
+      </div>
+    </div>
+
+    <!-- Political timeline -->
+    <h3 style="font-size:1rem; font-weight:800; margin-bottom:20px; color:var(--dark);">ð ããªãéããªãããã®çµç·¯ãæç³»åã§</h3>
+    <div class="ptl">
+      <button class="ptl-history-toggle" id="ptl-toggle" onclick="togglePtlHistory()">
+        ð 2æ28æ¥ã3æ29æ¥ã®çµç·¯ãè¦ãï¼12ä»¶ï¼â¼
+      </button>
+      <div class="ptl-history collapsed" id="ptl-history">
+      <div class="ptl-item">
+        <div class="ptl-dot dot-red"></div>
+        <div class="ptl-date">2026å¹´2æ28æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-ir">ð®ð· ã¤ã©ã³</span>
+          <strong>ç±³ã»ã¤ã¹ã©ã¨ã«ãã¤ã©ã³è»äºæ½è¨­ãæ»æ â é©å½é²è¡éãå°éå®£è¨</strong>
+          é©å½é²è¡éãå°éå®£è¨ã1æ¥120é»ã ã£ãéèªè¹ã5é»ç¨åº¦ã«æ¿æ¸ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æä¸æ¬</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð¯ðµ æ¥æ¬æ¿åº</span>
+          <strong>æ¥æ¬é¢ä¿è¹45é»ã®è¶³æ­¢ããç¢ºèªãæ¿åºãåèæ¾åºãæ±ºå®</strong>
+          æ¥æ¬è¹ä¸»åä¼ãæ¥æ¬é¢ä¿è¹45é»ã»è¹å¡1,154åï¼ãã¡æ¥æ¬äºº24åï¼ããã«ã·ã£æ¹¾åã§å¾æ©ä¸­ã¨çºè¡¨ãçµç£çãå½å®¶åèæ¾åºï¼ç´8,000ä¸ãã¬ã«ï¼ãéå§ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æ14æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-us">ðºð¸ ãã©ã³ãå¤§çµ±é </span>
+          <strong>ãæ¥ä¸­éã»è±ä»ãè»è¦ãæ´¾é£ãããã¨åå½ã«è¦æ±</strong>
+          åçå½ã«æµ·è»è¦èã®æ´¾é£ãå¼ã³ãããæ¥æ¬ãåæãã§è¨åï¼æ¥çµï¼ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-blue"></div>
+        <div class="ptl-date">2026å¹´3æ19æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-intl">ð æ¥è±ä»ç¬ä¼è­å  å±åå£°æ</span>
+          <strong>7ã«å½é¦è³ãå±åå£°æããæ©é·ã»ãã­ã¼ã³æ»æãå³æåæ­¢ããã</strong>
+          é«å¸é¦ç¸ãç½²åãåå å½ã¯30ãå½ã«æ¡å¤§ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-blue"></div>
+        <div class="ptl-date">2026å¹´3æ19ã20æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð¯ðµ é«å¸é¦ç¸ â ð®ð· ã¤ã©ã³å¤ç¸</span>
+          <strong>æ¥æ¬ã¸ã®ç¹å¥éæ®ï¼ã¤ã©ã³ããæ¥æ¬è¹ã®ééãèªããç¨æãã¨è¡¨æ</strong>
+          ã¢ã©ã°ãå¤ç¸ãæ¥æ¬é¢é£è¹è¶ã®ééãèªããç¨æããããã¨çºè¡¨ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-red"></div>
+        <div class="ptl-date">2026å¹´3æ21ã22æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-us">ðºð¸ ãã©ã³ãå¤§çµ±é </span>
+          <strong>ã48æéä»¥åã«éæ¾ããªããã°é»åã¤ã³ãã©ãæ»æãããã¨æå¾éå</strong>
+          ã¤ã©ã³ã¯ãæ»æããã°å®å¨å°éã§å¯¾æãã¨åçºï¼Bloombergï¼ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æ23æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-us">ðºð¸ ãã©ã³ãå¤§çµ±é </span>
+          <strong>ä¸è»¢ãã¦ãè¯å¥½ãªå¯¾è©±ãç¶ãã¦ãããã¨æ»ææéãäºå®ä¸å»¶æ</strong>
+          ãæ ¸åµå¨ã®éä¿æããªã©15ã®åæäºé ãããã¨ãä¸»å¼µãã¤ã©ã³ã¯ãç±³å½ã¨ã®ç´æ¥äº¤æ¸ã§ã¯ãªããä»²ä»èãéããæ¥è§¦ãã¨å¦å®ãåæ¹ã®æå ±ãé£ãéããåè¡ãã¯ä¸éæã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æ26æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-ir">ð®ð· ã¤ã©ã³ ï¼ ð¯ðµ æ¥æ¬æ¿åº</span>
+          <strong>ã¤ã©ã³ãã¿ã³ã«ã¼10é»ã®éèªãè¨±å¯ããã ãå¨é¢è§£é¤ãªãã</strong>
+          ãã¿ã³ã«ã¼10é»ãéèªãã¨çºè¡¨ããã ãå¨é¢è§£é¤ãªããã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-red"></div>
+        <div class="ptl-date">2026å¹´3æ27æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð¯ðµ æ¥æ¬ï¼å»çï¼</span>
+          <strong>ã­ã¤ã¿ã¼ãå ±éï¼éæã»æè¡ç¨åã4ã8æã«åºè·å°é£ã«ãªãå¯è½æ§</strong>
+          ãããµä¸è¶³ã«ããå»çæ©å¨ã¸ã®å½±é¿ãé¡å¨åãè©³ç´°ã¯ãéæ34ä¸äººãã®ã»ã¯ã·ã§ã³ã¸ã
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æ27æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who" style="background:#6c5ce7;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">ð G7å¤ç¸ä¼å</span>
+          <strong>G7å±åå£°æï¼ãéèªæãªãèªè¡ã®èªç±ã®æä¹çåå¾©ãçµ¶å¯¾çã«å¿è¦ã</strong>
+          æ»æã®å³æåæ­¢ã¨èªè¡ã®èªç±ã®æä¹çåå¾©ãç¢ºèªãèæ¨å¤ç¸ãG7ã§é½é½ãªãããï¼æ¥çµã¯AFPï¼
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´3æ29æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð¯ðµ æ¥æ¬æ¿åº</span>
+          <strong>å°éï¼é±ç®ï¼G7åèª¿è·¯ç·ãç¶­æãã¤ã©ã³ã¨ã®åå¥äº¤æ¸ã¯å¼ãç¶ãå¦å®</strong>
+          G7å£°æå¾ãå·ä½çæéç­ã¯ç¤ºããããæ¥æ¬ã¯ç³æ²¹åèï¼æ¿åºã»æ°éåè¨ç´180æ¥åï¼ãç¶­æãã¤ã¤ãå»çã»åå­¦ååéã®ä¾çµ¦æ¸å¿µãç¶ããï¼åºå¸ï¼Bloombergã»æ¥çµæ°èï¼
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-blue"></div>
+        <div class="ptl-date">2026å¹´3æ29æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-intl">ð G7å¤ç¸ä¼è­°ï¼ããªè¾º)</span>
+          <strong>G7å±åå£°æï¼30ã«å½è¶ããã«ã ãºå®å¨ç¢ºä¿ã«ãè²¢ç®ã®ç¨æãè¡¨æ</strong>
+          ä»ã´ã©ã¼ã»ãã»ã»ã«ãã¼ã§éå¬ãããG7å¤ç¸ä¼è­°ã§å±åå£°æãæ¡æãè±ã»ç¬ã»ä»ã»ä¼ã»å ã»æ¥ãå«ã 30ã«å½ä»¥ä¸ãæ¦å¾ã®æµ·å³¡åéæ¯æ´ãè¡¨æãç±³ã«ããªå½åé·å®ã¯æ¦å¾ã®ãã«ã ãºåå·³è¨ç»ãæç¤ºãæ°éæ­»èã¸ã®æ»æåæ­¢ãä¸è´è¦è«ã
+        </div>
+      </div>
+      </div><!-- /.ptl-history -->
+      <div class="ptl-item">
+        <div class="ptl-dot dot-red"></div>
+        <div class="ptl-date">2026å¹´3æ30ã31æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-us">ðºð¸ ãã©ã³ãæ¿æ¨©</span>
+          <strong>ã4æ6æ¥ãæéãââåæãªããã°ã¤ã©ã³ã®çºé»æãæ»æ</strong>
+          ãã©ã³ãå¤§çµ±é ã4æ6æ¥ãæå¾éçã®æéã«è¨­å®ããæ¦äºçµçµã¯ãã«ã ãºåéã®åãã¨ãè¨åãã¤ã©ã³ã¨ã®åè­°ã¯ãå»ºè¨­çãã¨ããªãããå§åãç¶ç¶ãï¼Bloombergã»æäºï¼
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-green"></div>
+        <div class="ptl-date">2026å¹´3æ30æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð¯ðµ æ¥æ¬äººè¹å¡</span>
+          <strong>å°éå¾åãã¦æ¥æ¬äºº4åãä¸è¹ã»å¸°å½</strong>
+          ãã«ã·ã£æ¹¾ã«è¶³æ­¢ãããã¦ããæ¥æ¬äººä¹çµå¡24åã®ãã¡4åãåãã¦ä¸è¹ã»å¸°å½ãå¥åº·ç¶æã«åé¡ãªãï¼å¤åçç¢ºèªï¼ãæ®ã20åã«ã¤ãã¦å®æ¿é·å®ãå®å¨ç¢ºä¿ãæéè¦ããï¼ANNã»èª­å£²ï¼
+        </div>
+      </div>
+      <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´4æ1æ¥</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð æ¬æ¥</span>
+          <strong>å°é5é±ç®ã»4/6æéã¾ã§ãã¨5æ¥</strong>
+          ã¤ã©ã³ã¨ã®äº¤æ¸ã¯ç¶ç¶ä¸­ãåæ²¹ä¾¡æ ¼ã¯WTIç´104ãã«ã§é«æ­¢ã¾ããã¤ã©ã³ã¯ä¸é¨è¹è¶ã«æå¤§200ä¸ãã«ã®ãéè¡æããèª²ãåãããï¼Bloombergã»æäºï¼
+        </div>
+      </div>
+    </div>
+          <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´4æ2æ¥ï¼æ¬æ¥ï¼</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð æ¬æ¥</span>
+          <strong>ãã©ã³ãå¤§çµ±é ããã«ã ãºåéãåæ¦æ¡ä»¶ã«æè¨ã»å½æ°åãæ¼èª¬å®æ½</strong>
+          ãã©ã³ãå¤§çµ±é ã¯4æ2æ¥ãå½æ°åãæ¼èª¬ã§ã¤ã©ã³æå¢ãèª¬æãããã«ã ãºæµ·å³¡ãåéãããã¾ã§åæ¦ã¯èæ®ããªããã¨æè¨ã4æ6æ¥ã®æçµæéãè¿ãäº¤æ¸ç¶ç¶ä¸­ãã¤ã©ã³å´ã¯åæ¦è¦è«ãå¦å®ï¼Bloombergã»NBCï¼
+        </div>
+      </div>
+            <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´4æ3æ¥ï¼æ¬æ¥ï¼</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð æ¬æ¥</span>
+          <strong>æ¥æ¬§ãªã40ã«å½ããã«ã ãºéèªææå¦ã»ã¤ã©ã³å¶è£ãæ¤è¨</strong>
+          è±å½ä¸»å°ã®40ã«å½ä»¥ä¸ã®å¤ç¸ä¼åã§ãã¤ã©ã³ã«ããæµ·å³¡å°éã»éèªæå¼´åã¸ã®å¯¾æç­ãåè­°ãéèªææå¦ã¨å¶è£ãå«ãè­°é·å£°æãæ¡æãåæã«ã¤ã©ã³ã¨ãªãã¼ã³ãæµ·å³¡éèªç£è¦ã®åå®èæ¡ãä½æä¸­ã¨å ±ããããï¼Bloombergã»Al Jazeeraã»CNBCï¼
+        </div>
+      </div>
+
+            <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026å¹´4æ4æ¥ï¼æ¬æ¥ï¼</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">ð æ¬æ¥</span>
+          <strong>ã¤ã©ã³ãç±³è»æ©2æ©æå¢ã»æ¹¾å²¸è£½æ²¹æãæ»æãæ¦éæ¿å</strong>
+          ã¤ã©ã³ãF-15ãå«ãç±³è»æ©2æ©ãæå¢ï¼ç´äºéå§ä»¥æ¥åï¼ãã¯ã¦ã§ã¼ãã®ããã»ã¢ã«ã»ã¢ãããã£è£½æ²¹æããã³UAEã®ããã·ã£ã³ã¬ã¹æ½è¨­ãè¢«å¼¾ããã¬ã³ãåæ²¹ã¯109ãã«ãWTIã¯111ãã«è¶ãï¼NPRã»CNNã»Bloombergï¼
+        </div>
+      </div>
+            <div class="ptl-item">
+        <div class="ptl-dot dot-orange"></div>
+        <div class="ptl-date">2026年4月5日（本日）</div>
+        <div class="ptl-card">
+          <span class="ptl-who who-jp">📍 本日</span>
+          <strong>トランプ最終期限前日—イランがイラク石油船のホルムズ通航を許可</strong>
+          トランプ大統領が設定した4月6日の最終期限を翌日に控える中、イラン軍はイラク産石油のホルムズ海峡通航を許可すると発表。一方、原油価格はWTI約111ドル・ブレント約108ドルで高止まりが続く（Bloomberg・Al Jazeera）
+        </div>
+      </div>
+      <!-- DIPLOMATIC GAP -->
+    <div class="diplo-gap">
+      <div class="diplo-gap-header">
+        ð äºå®ã®å¯¾æ¯ï¼ã¤ã©ã³ã¯ãéãããã¨è¨ã£ã¦ãããã§ã¯æ¥æ¬ã¯ï¼
+        <span class="fact-badge">äºå®ãã¼ã¹</span>
+      </div>
+      <div class="diplo-cols">
+        <div class="diplo-col iran-side">
+          <div class="diplo-col-head">ð®ð· ã¤ã©ã³å´ã®çºè¨ã»è¡å</div>
+          <div class="diplo-quote">
+            ãæ¥æ¬é¢é£è¹è¶ã®ãã«ã ãºæµ·å³¡ééãèªããç¨æããããæ¥æ¬å´ã¨ã®åè­°ã¯ãã§ã«é²ãã§ããã
+          </div>
+          <div class="diplo-source">ã¤ã©ã³ã»ã¢ã©ã°ãå¤ç¸ï¼3æ20æ¥ãå±åéä¿¡ã¤ã³ã¿ãã¥ã¼ï¼</div>
+          <div style="margin-top:12px; font-size:0.8rem;">
+            ã¤ã©ã³ã¯ããã«ãæ¥æ¬è¹ç±ã¿ã³ã«ã¼ãåæããã¦ééãåå¥ã«è¨±å¯ããææãç¹°ãè¿ãç¤ºãã¦ãããã¤ã©ã³ã«ã¨ã£ã¦æ¥æ¬ã¯é·å¹´ã®ãä¸­ç«çãªåå¥½å½ãã§ãããå¤äº¤çãã£ã³ãã«ãçãã¦ããæ°å°ãªãå½ã®ã²ã¨ã¤ã
+          </div>
+        </div>
+        <div class="diplo-col japan-side">
+          <div class="diplo-col-head">ð¯ðµ æ¥æ¬å´ã®å®éã®å¯¾å¿</div>
+          <div class="diplo-quote">
+            ãæ¥æ¬ã ãåå¥ã«äº¤æ¸ãããã¨ã¯ããã¾ã®ã¨ããèãã¦ããªãã
+          </div>
+          <div class="diplo-source">èæ¨æå å¤åå¤§è£ï¼3æ22æ¥ããã¸ãã¬ãçªçµï¼Bloombergå ±éï¼</div>
+          <div class="diplo-quote" style="margin-top:10px;">
+            ããã¹ã¦ã®å½ã®è¹ãééã§ããç¶æ³ããããã¦ã¤ã©ã³ã«åããããã
+          </div>
+          <div class="diplo-source">èæ¨å¤ç¸ã»è¨èä¼è¦ï¼3æ24æ¥ï¼â ãã ãå·ä½çãªäº¤æ¸ã®ææã»åå®¹ã¯ç¤ºãããï¼IWJè¨é²ï¼</div>
+        </div>
+      </div>
+      <div class="diplo-gap-footer">
+        <strong>ãªããã®ã®ã£ãããçã¾ãã¦ããã®ãï¼</strong><br>
+        â  èæ¨å¤ç¸ã¯3/17ã«ã¢ã©ã°ãå¤ç¸ã¨ä¼è«å¾ããåå¥äº¤æ¸ã¯èãã¦ããªããã¨å¬è¨ï¼æ¥çµï¼ã<br>
+        â¡ ç±³å½ãåçå½ã«ãè¦èæ´¾é£ããè¦æ±ãã¦ãããæ¥æ¬ã®ç¬èªäº¤æ¸ã¯ç±³å½ã¨ã®é¢ä¿ä¸é£ããç«å ´ã<br>
+        <span style="color:var(--gray); font-size:0.75rem; display:block; margin-top:6px;">â» ä¸è¨ã¯å ±éã»å°éå®¶åæã«ãããæ¥æ¬æ¿åºã®å¬å¼èª¬æã¯ãªãã</span>
+      </div></div>
+    </div>
+
+    <div class="wall-box">
+      <h4>â æ¥æ¬ãèªè¡éãç°¡åã«åºããªãçç±</h4>
+      ç¾è¡æ³ã§ã¯èªè¡éãå¤å½ã§ã®æ­¦åè¡çªã«é¢ä¸ãããã¨ã¯æ²æ³ä¸å°é£ãã¾ãè»äºé¢ä¸ããã°ã¤ã©ã³ããã®ç¹å¥éæ®ï¼æ¥æ¬è¹åªéï¼ãå¤±ããªã¹ã¯ããæ¥æ¬ã¯å¤äº¤ã»çµæ¸ææ®µã§ã®è§£æ±ºãç®æãã¦ãã¾ãã
+    </div></div>
+  </div>
+</section>
+
+<div class="band"></div>
+
+<!-- ââ STRANDED SHIPS ââ -->
+<section class="ships-bg" id="ships">
+  <div class="ships-inner">
+    <div class="section-head">
+      <div class="section-label" style="color:#90caf9; background:rgba(144,202,249,0.15);">SECTION 02</div>
+      <h2 class="section-title" style="color:white;">ð¢ ãã«ã·ã£æ¹¾ã«<br>åãæ®ãããäººãã¡</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.6);">æ¥æ¬é¢ä¿ã®è¹45é»ã»è¹å¡1,154åãè¡ãå ´ãå¤±ã£ã¦ãã¾ããããã¯ãã¥ã¼ã¹ã®æ°å­ã§ã¯ãªããä»ãã®ç¬éã®äººã®è©±ã§ãã</p>
+    </div>
+
+    <div style="background:rgba(39,174,122,0.15);border:1px solid rgba(39,174,122,0.4);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:0.82rem;color:rgba(255,255,255,0.85);">â <strong style="color:#27AE7A;">3/30 UPDATEï¼</strong>å°éå¾åãã¦æ¥æ¬äººä¹çµ4åãä¸è¹ã»å¸°å½ãå¥åº·ç¶æã«åé¡ãªãï¼å¤åçç¢ºèªï¼ãæ®ã20åã«ã¤ãã¦å®æ¿é·å®ãå®å¨ç¢ºä¿ãæéè¦ãã
+    </div>
+
+    <div class="ships-stat-row">
+      <div class="ships-tile">
+        <div class="ships-num">45<span class="ships-unit">é»</span></div>
+        <div class="ships-lbl">ãã«ã·ã£æ¹¾åã§<br>å¾æ©ä¸­ã®æ¥æ¬é¢ä¿è¹</div>
+      </div>
+      <div class="ships-tile">
+        <div class="ships-num">20<span class="ships-unit">å</span></div>
+        <div class="ships-lbl">æ¹¾åã«æ®ãæ¥æ¬äººè¹å¡<br><span style="color:rgba(39,174,122,0.9);font-size:0.65rem;">ï¼4åã¯3/30å¸°å½æ¸ï¼</span></div>
+      </div>
+      <div class="ships-tile">
+        <div class="ships-num">4ä¸<span class="ships-unit">äºº</span></div>
+        <div class="ships-lbl">ä¸çå¨ä½ã§<br>è¶³æ­¢ããããè¹å¡æ°</div>
+      </div>
+      <div class="ships-tile">
+        <div class="ships-num">3<span class="ships-unit">é±é+</span></div>
+        <div class="ships-lbl">ä¸é¨è¹å¡ã®<br>å¾æ©æ¥æ°ï¼CNNè¨¼è¨ï¼</div>
+      </div>
+    </div>
+
+    <!-- Testimony cards -->
+    <div class="testimony-card">
+      <div class="testimony-header">
+        <div class="testimony-icon">ð§ââ</div>
+        <div class="testimony-meta">
+          <div class="testimony-name">ããã¿ã³ã«ã¼è¹é·ã®è¨¼è¨ï¼CNNå ±éããï¼</div>
+          <div style="font-size:0.72rem; color:rgba(255,255,255,0.5);">200ä¸ãã¬ã«ã®åæ²¹ãç©ãã ã¾ã¾ãã«ã·ã£æ¹¾ã«åæ³ä¸­</div>
+        </div>
+      </div>
+      <div class="testimony-text">
+        3é±éä»¥ä¸åæ³ä¸­ãäº¤ä»£è¦å¡ã»é£æã»æ°´ã®è£çµ¦ãæ»ããç²¾ç¥çã»èä½çã«éçã
+      </div>
+    </div>
+
+    <div class="testimony-card">
+      <div class="testimony-header">
+        <div class="testimony-icon">ð¦</div>
+        <div class="testimony-meta">
+          <div class="testimony-name">ãã«ã·ã£æ¹¾ã§è¶³æ­¢ãããã¦ããåæ²¹ã®éï¼æ¥çµãã¸ãã¹å ±éããï¼</div>
+          <div style="font-size:0.72rem; color:rgba(255,255,255,0.5);">ãæ¥æ¬ã®æ¶è²»é45æ¥åãã®ã¤ã©ã³åæ²¹ãæµ·ä¸ã«</div>
+        </div>
+      </div>
+      <div class="testimony-text">
+        <div class="testimony-quote">ãæµ·ä¸ã®å°å³ããã¿ã³ã«ã¼ã®åãæ¶ãããæå¾ã®ä¸­æ±çºåæ²¹ã¿ã³ã«ã¼ã3æ22æ¥ã«æ¥æ¬ã«å°çãããï¼Bloombergï¼</div>
+      </div>
+    </div>
+
+    <div class="ships-issues">
+      <div class="issue-tile">
+        <span class="issue-icon">â°</span>
+        <div class="issue-title">äº¤ä»£ã§ããªã</div>
+        <div class="issue-desc">èªè·¯ãééããäº¤ä»£è¦å¡ãæ¥ãããªããæ³å®ã®ä¹è¹æéãè¶ããè¹å¡ã</div>
+      </div>
+      <div class="issue-tile">
+        <span class="issue-icon">ð½</span>
+        <div class="issue-title">é£æã»æ°´ã®è£çµ¦å°é£</div>
+        <div class="issue-desc">è£çµ¦è¹ãéè¡å¶éãåãã¦ãããé£æã»é£²ææ°´ãä¸è¶³ããè¹ã</div>
+      </div>
+      <div class="issue-tile">
+        <span class="issue-icon">ð¡</span>
+        <div class="issue-title">GPSå¦¨å®³ã»çé³</div>
+        <div class="issue-desc">é©å½é²è¡éã«ããGPSé»æ³¢å¦¨å®³ã§ä½ç½®ææ¡å°é£ãé£ç¿ä½ã®ç®æã</div>
+      </div>
+      <div class="issue-tile">
+        <span class="issue-icon">ð¢</span>
+        <div class="issue-title">åè¹ä¸äºè¹ãæå·</div>
+        <div class="issue-desc">åè¹ä¸äºä¿æã®ã³ã³ããè¹ããã«ã ãºæµ·å³¡è¿ãã§æå·ï¼3ææ¥çµå ±éï¼</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band"></div>
+
+<!-- ââ DIALYSIS / MEDICAL ââ -->
+<section class="medical-bg" id="medical">
+  <div class="medical-inner">
+    <div class="section-head">
+      <div class="section-label">SECTION 03</div>
+      <h2 class="section-title">ð¥ éææ£è34ä¸äººã®<br>å½ç¶±ãçµ¶ããããã¨ãã¦ãã</h2>
+      <p class="section-desc">ç³æ²¹ã¯ã¬ã½ãªã³ã ãã§ã¯ããã¾ãããå»çæ©å¨ã®ç´ æããããµããå±ããªããªãã¨ãæ²»çãç¶ããããªããªãäººãã¡ããã¾ãã</p>
+    </div>
+
+    <!-- Alert -->
+    <div class="alert-banner">
+      <div class="alert-icon">ð¨</div>
+      <div>
+        <div class="alert-title">ã­ã¤ã¿ã¼ 3æ27æ¥å ±éï¼ãéæã»æè¡ç¨åã4ã8æã«åºè·å°é£ã«ãªãå¯è½æ§ã</div>
+        <div class="alert-body">ãããµï¼ç³æ²¹ã®ä¸ç¨®ï¼ã®ä¾çµ¦ä¸è¶³ã«ãããå½åã§éææ£èåãå»çæ©å¨ãæè¡ç¨åãè£½é ããã¡ã¼ã«ã¼ããæ©ããã°4æä¸­æ¬ãããéãã¨ã8æã«ããã¦å½åã¸ã®åºè·ãå°é£ã«ãªãå¯è½æ§ãããã¨è¤æ°ã®é¢ä¿èãè¨¼è¨ããã</div>
+        <div class="alert-source">åºå¸: ã­ã¤ã¿ã¼éä¿¡ï¼2026/3/27ï¼/ Newsweek Japan / Yahoo!ãã¥ã¼ã¹</div>
+      </div>
+    </div>
+
+    <!-- Naphtha explanation -->
+    <div class="naphtha-flow">
+      <div class="naphtha-title">ð¡ ãªãç³æ²¹ãå»çã«é¢ä¿ããã®ï¼ããããµãã®é£é</div>
+      <div class="nf-step">
+        <div class="nf-num">1</div>
+        <div>ä¸­æ±ããã®ãããµï¼ç³æ²¹è£½åã®ä¸ç¨®ï¼ãå±ããªããªã</div>
+      </div>
+      <div style="padding-left:34px; color:var(--gray); font-size:0.8rem; margin-bottom:8px;">â ãããµã¯ãã©ã¹ããã¯ã®åæãã¨ãã¬ã³ãããã³ã¼ã³ããä½ãããã«å¿è¦</div>
+      <div class="nf-step">
+        <div class="nf-num">2</div>
+        <div>ã¿ã¤ã»ãããã ãªã©ã®å·¥å ´ã§ãã©ã¹ããã¯è£½åãä½ããªããªã</div>
+      </div>
+      <div style="padding-left:34px; color:var(--gray); font-size:0.8rem; margin-bottom:8px;">â å»çç¨ãã¥ã¼ãã»åè·¯ã»å®¹å¨ã¯ãã©ã¹ããã¯è£½</div>
+      <div class="nf-step">
+        <div class="nf-num">3</div>
+        <div>æ¥æ¬å½åã®çé¢ã»éæã¯ãªããã¯ã¸ã®å»çæ©å¨ã®åºè·ãå°é£ã«</div>
+      </div>
+      <div style="padding-left:34px; color:var(--gray); font-size:0.8rem; margin-bottom:8px;">â éææ²»çã¯æ¯é±2ã3åãä»£æ¿ããããªã</div>
+      <div class="nf-step">
+        <div class="nf-num">4</div>
+        <div><strong style="color:var(--red);">ç´34ä¸äººã®éææ£èãæ²»çãç¶ç¶ã§ããªããªããªã¹ã¯</strong></div>
+      </div>
+    </div>
+
+    <!-- Timeline of what happens when -->
+    <h3 style="font-size:0.95rem; font-weight:800; margin-bottom:16px; color:var(--dark);">â³ ãã®ã¾ã¾å°éãç¶ãã¨ããã¤ä½ãèµ·ããã</h3>
+    <div class="timeline-grid">
+      <div class="tg-card tg-now">
+        <div class="tg-when">ç¾å¨ã4æä¸­æ¬</div>
+        <div class="tg-title">ð¶ æè¡ç¨åã®ä¾çµ¦ãå±æ©çã«</div>
+        <div class="tg-body">æè¡ä¸­ã«ä½¿ãå»æ¶²å®¹å¨ã¡ã¼ã«ã¼ï¼å½åã·ã§ã¢70%ï¼ã®ã¿ã¤å·¥å ´ã¸ã®ãããµä¾çµ¦ã4æä¸­æ¬ã§çµäºè¦è¾¼ã¿ã</div>
+      </div>
+      <div class="tg-card tg-mid">
+        <div class="tg-when">4æã8æãã</div>
+        <div class="tg-title">ð´ éæåè·¯ã®åºè·ãå°é£ã«</div>
+        <div class="tg-body">éæåè·¯ã¡ã¼ã«ã¼ï¼å½åã·ã§ã¢50%ï¼ãã¿ã¤ã»ãããã å·¥å ´ã®ãããµä¸è¶³ã«ããã8æããããåºè·å°é£ãã¨è¨¼è¨ï¼ã­ã¤ã¿ã¼ï¼ã</div>
+      </div>
+      <div class="tg-card tg-bad">
+        <div class="tg-when">å¤ä»¥éï¼å°éç¶ç¶ã®å ´åï¼</div>
+        <div class="tg-title">ð¨ éææ£èã¸ã®ç´æ¥å½±é¿</div>
+        <div class="tg-body">é±2ã3åã®éæãåããããªããªãã°ãèä¸å¨æ£èã®çå½ã«é¢ãããæ¥æ¬ã®éææ£èã¯ç´34ä¸äººï¼2024å¹´æ«ï¼ã</div>
+      </div>
+    </div>
+
+    <div class="medical-note">
+      <strong>ð å»çå´©å£ã®é£éã¯ããã ãã§ã¯ããã¾ãã</strong><br>
+      çé¢ã®é»åã®å¤ãã¯LNGï¼æ¶²åå¤©ç¶ã¬ã¹ï¼ç±æ¥ãé»æ°ä»£é«é¨°ãè¨ç»åé»ãèµ·ããã°ãäººå·¥å¼å¸å¨ã»ICUã»æè¡å®¤ã»CTã¹ã­ã£ã³ãªã©ãã¹ã¦ã«å½±é¿ãã¾ãã3æ16æ¥ã«ã¯ãã§ã«åºåèç£ãã¨ãã¬ã³æ¸ç£ãçºè¡¨ãå½å12ãæã®ã¨ãã¬ã³è£½é æ½è¨­ã®ãã¡åæ°ãæ¸ç£ç¶æã«å¥ã£ã¦ãã¾ãï¼æ¥æ¬çµæ¸æ°èï¼ã<br><br>
+      çµæ¸ç£æ¥­çã»è³æºã¨ãã«ã®ã¼åºã®å¹¹é¨ã¯3æ26æ¥å¤ãé¦ç¸å®é¸ã§é«å¸é¦ç¸ã«å»çæ©å¨ã®èª¿éè¦éãã«ã¤ãã¦ãå ±åãè¡ãã¾ããã
+    </div>
+  </div>
+</section>
+
+<div class="band"></div>
+
+<!-- ââ RESERVES ââ -->
+<section class="reserve-bg" id="reserve">
+  <div class="reserve-inner">
+    <div class="section-head">
+      <div class="section-label">SECTION 04</div>
+      <h2 class="section-title">ð¢ æ¥æ¬ã®ç³æ²¹åèã¯ã©ã®ãããããï¼</h2>
+      <p class="section-desc">ãããã«ã¬ã½ãªã³ãç¡ããªããã¯èª¤è§£ãã§ããå¤æ®µãä¸ãããªããã¯å¥ã®è©±ã</p>
+    </div>
+
+    <div class="res-bar-group">
+      <div class="res-bar-label">
+        <span>å½å®¶åèï¼146æ¥åï¼</span>
+        <span>åè¨254æ¥å â ç´8ã¶æ</span>
+      </div>
+      <div class="res-track"><div class="res-fill rf-gov">146æ¥</div></div>
+      <div style="margin-top:12px;">
+        <div class="res-bar-label"><span>æ°éåèï¼101æ¥åï¼</span></div>
+        <div class="res-track"><div class="res-fill rf-priv">101æ¥</div></div>
+      </div>
+      <div style="margin-top:12px;">
+        <div class="res-bar-label"><span>ç£æ²¹å½å±ååèï¼7æ¥åï¼</span></div>
+        <div class="res-track"><div class="res-fill rf-joint">7æ¥</div></div>
+      </div>
+      <div class="res-legend">
+        <span><span class="res-leg-dot" style="background:#1976d2;"></span>å½å®¶åèï¼çµç£çç®¡çï¼</span>
+        <span><span class="res-leg-dot" style="background:#388e3c;"></span>æ°éåèï¼ç³æ²¹ä¼ç¤¾ï¼</span>
+        <span><span class="res-leg-dot" style="background:#f4511e;"></span>ç£æ²¹å½å±ååè</span>
+      </div>
+    </div>
+
+    <div class="reserve-warn">
+      â  <strong>8æããã«ã¯åèã«ãéçãï¼</strong>æ¿åºã¯ãã§ã«å½å®¶åèãã8,000ä¸ãã¬ã«ï¼ç´45æ¥åï¼ãæ¾åºä¸­ããã®ãã¼ã¹ãç¶ãå°éãé·æåããã°ãå¤ä»¥éã«æ·±å»ãªä¸è¶³æãçããã¨ã®è©¦ç®ãããã¾ãï¼JBpressï¼ãå»çç¨ãããµä¸è¶³ã¯ãã®åã«æ¥ã¾ãã
+    </div>
+  </div>
+</section>
+
+<!-- ââ WORLD POLICIES ââ -->
+<div class="band"></div>
+<section class="world-bg" id="world">
+  <div class="world-inner">
+    <div class="section-head">
+      <div class="section-label" style="color:#90caf9; background:rgba(144,202,249,0.15);">SECTION 04.5</div>
+      <h2 class="section-title" style="color:white;">ð ä¸çã®å½ãã§ã¯<br>ãã§ã«ä½ãå§ã¾ã£ã¦ããã</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.6);">æ¥æ¬ããåèã®å°ãªãå½ãã§ã¯ããã§ã«æ¿åºãç·æ¥æ¿ç­ãå®æ½ä¸­ãããããå°éãé·å¼ããæ¥æ¬ã®è¿æªæ¥ãã®ãã³ãã«ãªãã</p>
+    </div>
+
+    <div class="severity-legend">
+      <div class="sev-item"><div class="sev-dot sev-critical"></div>å±æ©çï¼çµ¦æ²¹å¶éã»åé»å®æ½ï¼</div>
+      <div class="sev-item"><div class="sev-dot sev-severe"></div>æ·±å»ï¼å¤§è¦æ¨¡ãªè¦å¶å°å¥ï¼</div>
+      <div class="sev-item"><div class="sev-dot sev-moderate"></div>è­¦æï¼ä¾¡æ ¼çµ±å¶ã»çã¨ãè¦è«ï¼</div>
+      <div class="sev-item"><div class="sev-dot sev-alert"></div>æ³¨æï¼æºåã»ã¢ãã¿ãªã³ã°æ®µéï¼</div>
+    </div>
+
+    <div class="country-grid">
+
+      <!-- ã¹ãªã©ã³ã« -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ð±ð°</span>
+          <div>
+            <div class="country-name">ã¹ãªã©ã³ã«</div>
+            <div class="country-dep">ä¸­æ±åæ²¹ä¾å­åº¦: ç´85%ãåè: ç´1ã¶æ</div>
+          </div>
+          <span class="sev-pill pill-critical">ð´ å±æ©ç</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">â½</span>ã¬ã½ãªã³çµ¦æ²¹ã<strong>1é±éããã25L</strong>ã«å¶éãå¥æ°ã»å¶æ°ãã³ãã¼ã§çµ¦æ²¹æ¥ãåå²</li>
+            <li><span class="pi">ð</span><strong>é±ä¼3æ¥å¶</strong>ãå°å¥ï¼æ¿åºæ©é¢ã»å­¦æ ¡ï¼ãçææ¶è²»ãå¼·å¶åæ¸</li>
+            <li><span class="pi">ð¡</span>å°åãã¨ã«<strong>è¨ç»åé»</strong>ãå®æ½ã1æ¥æ°æéã®åé»ãåå°ã§</li>
+            <li><span class="pi">ð</span>çæä¾¡æ ¼ã317â<strong>398ã«ãã¼/L</strong>ã«æ¥é¨°ï¼+25%ï¼</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ãã­ã¹ã¿ã³ -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ðµð°</span>
+          <div>
+            <div class="country-name">ãã­ã¹ã¿ã³</div>
+            <div class="country-dep">ä¸­æ±åæ²¹ä¾å­åº¦: ç´80%ãåè: ç´3é±é</div>
+          </div>
+          <span class="sev-pill pill-critical">ð´ å±æ©ç</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">ð«</span><strong>å¨åã®å­¦æ ¡ã2é±éä¼æ ¡</strong>ã«ãã¦çææ¶è²»ã¨é»åéè¦ãåæ¸</li>
+            <li><span class="pi">ð­</span>å·¥å ´ã®ææ¥­æéãé±4æ¥ã«ç­ç¸®ãé»åä¸è¶³ã«ããè¼ªçªåé»ãå®æ½</li>
+            <li><span class="pi">ð</span>åæ¥­æ½è¨­ã»å¸å ´ã®<strong>å¤9æéåº</strong>ãç¾©åå</li>
+            <li><span class="pi">ðµ</span>å¬ç¨è»ã®ä½¿ç¨ã50%åæ¸ãäºè¼ªè»ã®çæè³¼å¥ã«ä¸éè¨­å®</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ã¿ã¤ -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ð¹ð­</span>
+          <div>
+            <div class="country-name">ã¿ã¤</div>
+            <div class="country-dep">ä¸­æ±LNGä¾å­åº¦: é«ãè¦³åæ¥­ã«ãææ</div>
+          </div>
+          <span class="sev-pill pill-severe">ð  æ·±å»</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">ð¥</span>ç«è¬å ´ã®çæä¸è¶³ã§<strong>ç«è¬ãå°é£</strong>ã«ãéºä½ã®å®ç½®ãé·æåï¼ANNå ±éï¼</li>
+            <li><span class="pi">ð¡</span>æ¿åºæ©é¢ã»åæ¥­æ½è¨­ã¸ã®ç¯é»ç¾©åãã¨ã¢ã³ã³è¨­å®æ¸©åº¦ã25âä»¥ä¸ã«</li>
+            <li><span class="pi">ð</span>ã¬ã½ãªã³è£å©éãæ¡å¤§ããããä¾¡æ ¼ä¸æãæãããã</li>
+            <li><span class="pi">ð­</span>ç³æ²¹åå­¦å·¥å ´ã®ç¨¼åçãå¤§å¹ã«ç¸®å°ãè£½åä¸è¶³ãé£é</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ã¤ã³ã -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ð®ð³</span>
+          <div>
+            <div class="country-name">ã¤ã³ã</div>
+            <div class="country-dep">ä¸­æ±ä¾å­åº¦: ç´60%ãäººå£14åäºº</div>
+          </div>
+          <span class="sev-pill pill-severe">ð  æ·±å»</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">ð¢</span>ã­ã·ã¢ç£åæ²¹ã®è¼¸å¥ã<strong>45%å¢å </strong>ãã¦ä»£æ¿èª¿éãå¼·å</li>
+            <li><span class="pi">ðª¨</span>ç³ç­ç«åçºé»ãå¤§å¹æ¡å¤§ãCO2åæ¸ç®æ¨ãä¸æåæ­¢</li>
+            <li><span class="pi">ð³</span>LPGï¼èª¿çç¨ã¬ã¹ï¼ä¸è¶³ãæ·±å»åãè²·ãå ãã<strong>ã¡ãã¥ã¼å¤æ´</strong>ãç¸æ¬¡ã</li>
+            <li><span class="pi">ð</span>çæä¾¡æ ¼ã®æ¿åºä¸éæªç½®ãå°å¥ãè£å©éæ¯åºãæ¥å¢</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- éå½ -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ð°ð·</span>
+          <div>
+            <div class="country-name">éå½</div>
+            <div class="country-dep">ä¸­æ±åæ²¹ä¾å­åº¦: ç´70%ãã¿ã³ã«ã¼26é»ãè¶³æ­¢ã</div>
+          </div>
+          <span class="sev-pill pill-moderate">ð¡ è­¦æ</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">ð°</span>çæ<strong>ä¾¡æ ¼ã®ä¸éæªç½®</strong>ãå°å¥ãã¬ã½ãªã³ã»è»½æ²¹ã«ä¾¡æ ¼è¦å¶</li>
+            <li><span class="pi">ð¢</span>å½æ°ã¸ã®çã¨ãå¼ã³ãããå¼·åãæ¿åºæ½è¨­ã®ææ¿ã»å·æ¿å¶é</li>
+            <li><span class="pi">â¡</span>åå­åçºé»ã®ç¨¼åçãæå¤§åãLNGä¾å­ã®çºé»æ¯çãä½ä¸</li>
+            <li><span class="pi">ð¢</span>ã¿ã³ã«ã¼26é»ããã«ã·ã£æ¹¾ã§è¶³æ­¢ããä»£æ¿è¼¸éè·¯ãæ¤è¨ä¸­</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ãã£ã³ãã¼ã»ãã£ãªãã³ -->
+      <div class="country-card">
+        <div class="country-card-head">
+          <span class="country-flag">ð²ð²ðµð­</span>
+          <div>
+            <div class="country-name">ãã£ã³ãã¼ã»ãã£ãªãã³</div>
+            <div class="country-dep">åèãå°ãªãå½±é¿ãç´æ¥ç</div>
+          </div>
+          <span class="sev-pill pill-moderate">ð¡ è­¦æ</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">â½</span>ãã£ã³ãã¼ï¼<strong>çµ¦æ²¹å¶éãå°å¥</strong>ãç¹å®ææ¥ã®ã¿çµ¦æ²¹å¯è½ã«</li>
+            <li><span class="pi">ð</span>ãã£ãªãã³ï¼æ¿åºæ©é¢ã§ã®<strong>ã¨ãã«ã®ã¼ç¯ç´å¯¾ç­</strong>ãç¾©åå</li>
+            <li><span class="pi">ð¡</span>ä¸¡å½ã¨ãè¨ç»åé»ã®æºåæ®µéã«ãåèãåºãã¤ãã¨å®æ½ã¸</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- æ¥æ¬ï¼æ¯è¼ç¨ï¼ -->
+      <div class="country-card" style="border-color:rgba(144,202,249,0.35);">
+        <div class="country-card-head" style="background:rgba(144,202,249,0.08);">
+          <span class="country-flag">ð¯ðµ</span>
+          <div>
+            <div class="country-name">æ¥æ¬ï¼ç¾å¨ï¼</div>
+            <div class="country-dep">ä¸­æ±ä¾å­åº¦: ç´93%ãåè: ç´254æ¥å</div>
+          </div>
+          <span class="sev-pill pill-alert">ðµ æ³¨ææ®µé</span>
+        </div>
+        <div class="country-body">
+          <ul class="policy-list">
+            <li><span class="pi">ð¢</span>å½å®¶åèãã<strong>8,000ä¸ãã¬ã«æ¾åºä¸­</strong>ï¼45æ¥åç¸å½ï¼</li>
+            <li><span class="pi">ð</span>æ°éåèã®ä¿æç¾©åã70æ¥â55æ¥åã«å¼ãä¸ã</li>
+            <li><span class="pi">ð­</span>ç³æ²¹åå­¦ã®ã¨ãã¬ã³å·¥å ´ã<strong>12ãæä¸­6ãæã§æ¸ç£</strong></li>
+            <li><span class="pi">â </span>çµ¦æ²¹å¶éã»è¨ç»åé»ã¯ã¾ã ãªãããã ãå¤ä»¥éãåå²ç¹</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /country-grid -->
+
+    <div class="world-note">
+      <strong>ð ãã®ã»ã¯ã·ã§ã³ãç¤ºããã¨ï¼</strong>
+      æ¥æ¬ã¯åèéãå¤ããããç¾æç¹ã§ã¯ã¹ãªã©ã³ã«ã»ãã­ã¹ã¿ã³ã®ãããªç·æ¥æ¿ç­ã«ã¯è³ã£ã¦ãã¾ããããããä¾å­åº¦ã¯93%ã¨ä¸çãããã¯ã©ã¹ã§ããå°éã8ã¶æä»¥ä¸ç¶ãã°ãå³å´ã®ãç¾å¨ã®æ¥æ¬ãã«ã¼ãã¯ãå±æ©çãã«å¡ãæ¿ãããªã¹ã¯ãããã¾ãã<br>
+      <span style="font-size:0.73rem; margin-top:6px; display:block;">åºå¸: ãã¼ã¹ã¦ã£ã³ãºå½éäººéæ¯æ´ / ANNï¼ãã¬ãææ¥ç³»ï¼/ UNCTADå ±å / JETRO / Bloomberg</span>
+    </div>
+  </div>
+</section>
+
+<!-- ââ DAILY IMPACT ââ -->
+<section class="section" id="impact">
+  <div class="section-head">
+    <div class="section-label">SECTION 05</div>
+    <h2 class="section-title">ð° ããªãã®çæ´»è²»ã<br>ã©ããããä¸ããï¼</h2>
+    <p class="section-desc">å°éãç¶ããå ´åã®å°éå®¶è©¦ç®ãåä½ã¯ã1ã¶æãããã®å¢å é¡ãã®ç®å®ã</p>
+  </div>
+
+  <div class="impact-grid">
+    <div class="impact-card ic-fuel">
+      <span class="impact-ico">â½</span>
+      <div class="impact-title">ã¬ã½ãªã³ä»£</div>
+      <div class="impact-now">å°éå ç´170å/L â ç¾å¨ 200ååå¾</div>
+      <div class="bar-row">
+        <span class="bar-lbl">ç­æå½±é¿</span>
+        <div class="bar-track"><div class="bar-fill" style="width:35%; background:var(--orange);"></div></div>
+        <span class="bar-pct" style="color:var(--orange);">+20ã30%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">é·æåæ</span>
+        <div class="bar-track"><div class="bar-fill" style="width:80%; background:var(--red);"></div></div>
+        <span class="bar-pct" style="color:var(--red);">æå¤§Â¥328/L</span>
+      </div>
+      <div class="impact-note">è»ãä½¿ã2äººä¸å¸¯ã§æ+1,000ã2,500åãç®å®ãåæ²¹1ãã¬ã«ï¼140ãã«è¶ãæ³å®ã</div>
+    </div>
+
+    <div class="impact-card ic-elec">
+      <span class="impact-ico">ð¡</span>
+      <div class="impact-title">é»æ°ä»£ã»ã¬ã¹ä»£</div>
+      <div class="impact-now">çºé»ç¨LNGã®å¤§åããã«ã ãºçµç±</div>
+      <div class="bar-row">
+        <span class="bar-lbl">é»æ°ä»£</span>
+        <div class="bar-track"><div class="bar-fill" style="width:25%; background:var(--orange);"></div></div>
+        <span class="bar-pct" style="color:var(--orange);">+12ã25%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">é½å¸ã¬ã¹</span>
+        <div class="bar-track"><div class="bar-fill" style="width:30%; background:var(--red);"></div></div>
+        <span class="bar-pct" style="color:var(--red);">+15ã30%</span>
+      </div>
+      <div class="impact-note">æ1.2ä¸åã®é»æ°ä»£ãªã+1,400ã3,000åãå¤ã»å¬ã®å·ææ¿ã·ã¼ãºã³ã¯ããã«å¤§ããã</div>
+    </div>
+
+    <div class="impact-card ic-food">
+      <span class="impact-ico">ð</span>
+      <div class="impact-title">é£æå</div>
+      <div class="impact-now">è¾²æ¥­ã»è¼¸éã»åè£ã»å·èµãã¹ã¦ã«ç³æ²¹ãå¿è¦</div>
+      <div class="bar-row">
+        <span class="bar-lbl">é£åå¨ä½</span>
+        <div class="bar-track"><div class="bar-fill" style="width:12%; background:#b45309;"></div></div>
+        <span class="bar-pct" style="color:#b45309;">+3ã6%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">éèã»è</span>
+        <div class="bar-track"><div class="bar-fill" style="width:22%; background:#b45309;"></div></div>
+        <span class="bar-pct" style="color:#b45309;">+5ã10%</span>
+      </div>
+      <div class="impact-note">é£è²»8.5ä¸åã®ä¸å¸¯ã§æ+2,500ã5,100åã®è¦éããè¥æã»ããã¼ã«ãã¦ã¹ã®å æ¸©ä»£ãä¸æã</div>
+    </div>
+
+    <div class="impact-card ic-ind">
+      <span class="impact-ico">ð­</span>
+      <div class="impact-title">ã¢ãå¨è¬ã»å»è¬å</div>
+      <div class="impact-now">ãã©ã¹ããã¯ã»åæç¹ç¶­ã»å»è¬åã®åæããããµç±æ¥</div>
+      <div class="bar-row">
+        <span class="bar-lbl">ç©ä¾¡å¨ä½</span>
+        <div class="bar-track"><div class="bar-fill" style="width:18%; background:var(--blue);"></div></div>
+        <span class="bar-pct" style="color:var(--blue);">+0.8%pt</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">å»çæ©å¨</span>
+        <div class="bar-track"><div class="bar-fill" style="width:55%; background:var(--red);"></div></div>
+        <span class="bar-pct" style="color:var(--red);">ä¾çµ¦ä¸è¶³ã¸</span>
+      </div>
+      <div class="impact-note">ã¨ãã¬ã³çç£ããã§ã«åæ°æ¸ç£ãéæåè·¯ã»æè¡ç¨åãªã©ä»£æ¿ã®ãããªãåç®ã¸ã®å½±é¿ãæ·±å»ã</div>
+    </div>
+  </div>
+</section>
+
+<div class="band"></div>
+
+<!-- ââ SCENARIOS ââ -->
+<section class="section" id="scenario">
+  <div class="section-head">
+    <div class="section-label">SECTION 06</div>
+    <h2 class="section-title">ð® ããããã©ããªãï¼<br>3ã¤ã®ã·ããªãª</h2>
+    <p class="section-desc">å°éããã¤çµãããã«ãã£ã¦ãå½±é¿ã®æ·±å»ããå¤§ããå¤ããã¾ãã</p>
+  </div>
+
+  <div class="scenario-grid">
+    <div class="sc-card sc-good">
+      <span class="sc-tag">â æ¥½è¦³ã·ããªãª</span>
+      <div class="sc-title">äº¤æ¸æç«ã»1ã2ã¶æã§è§£é¤</div>
+      <div class="sc-when">â± 5æããã¾ã§ã«è§£æ±ºããå ´å</div>
+      <ul class="sc-list">
+        <li>åèã§å¯¾å¿å¯ãç©ä¸è¶³ã¯èµ·ããªã</li>
+        <li>ã¬ã½ãªã³ã¯ä¸æ200åè¶ããå¤ã«è½ã¡çã</li>
+        <li>å»çç¨ãããµä¸è¶³ã¯åé¿ã§ããå¯è½æ§ãã</li>
+        <li>è¹å¡ã¯æ©æå¸°éãçµæ¸ã¸ã®ææã¯éå®ç</li>
+      </ul>
+    </div>
+    <div class="sc-card sc-mid">
+      <span class="sc-tag">â  ä¸­ç¨åº¦ã·ããªãª</span>
+      <div class="sc-title">é¨åå¶éã3ã6ã¶æç¶ç¶</div>
+      <div class="sc-when">â± å¤ã¾ã§æ··ä¹±ãç¶ãå ´å</div>
+      <ul class="sc-list">
+        <li>ã¬ã½ãªã³ã»é»æ°ä»£ã®é«é¨°ãé·æå</li>
+        <li>é£æåã»æ¥ç¨åã®å¤ä¸ãããå®ç</li>
+        <li>æè¡ç¨åã®ä¾çµ¦ä¸è¶³ãç¾å®åï¼4æãï¼</li>
+        <li>æ¿åºã®è£å©éå¯¾å¿ãéçã«è¿ã¥ã</li>
+      </ul>
+    </div>
+    <div class="sc-card sc-bad">
+      <span class="sc-tag">ð¨ æ²è¦³ã·ããªãª</span>
+      <div class="sc-title">å¨é¢å°éãé·æåã»æ¦éæ¡å¤§</div>
+      <div class="sc-when">â± 8æä»¥éãè§£æ±ºããªãå ´å</div>
+      <ul class="sc-list">
+        <li>ç³æ²¹åèãæ¯æ¸ã«è¿ã¥ãçµ¦æ²¹å¶éã®ç¾å®å</li>
+        <li>éæåè·¯ãªã©å»çæ©å¨ã®æ·±å»ãªåä¸è¶³</li>
+        <li>éææ£è34ä¸äººã¸ã®ç´æ¥å½±é¿ãåºãããã</li>
+        <li>ã³ã­ãç¦ãè¶ããçµæ¸ç¸®å°ã®ãªã¹ã¯ï¼JBpressè©¦ç®ï¼</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hl-box">
+    <strong>ð¡ ç¾æç¹ï¼<span id="scenario-date">3æ29æ¥</span>ï¼ã®ç¶æ³</strong>
+    äº¤æ¸ã¯ç¶ç¶ä¸­ãæ¥æ¬è¹ç±ã¸ã®ééè¨±å¯ãã¿ã³ã«ã¼10é»ã®è§£æ¾ã¯å¥½ææã§ãããå¨é¢è§£é¤ã§ã¯ããã¾ããã3ã¤ã®ã·ããªãªã®ãã¡ãä¸­ç¨åº¦ããå¿µé ­ã«ãå»çã»ã¨ãã«ã®ã¼åæ¹ã§æºåãå¿è¦ãªç¶æ³ã§ãã
+  </div>
+</section>
+
+<!-- ââ FAQ ââ -->
+<section class="section" id="faq" style="padding-top:0;">
+  <div class="section-head">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">â ããããçå</h2>
+    <p class="section-desc">ãããã£ã¦èªåã«ã¯æ¬å½ã«é¢ä¿ããï¼ãã¨ããå£°ã«ãç­ããã¾ãã</p>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-badge">Q</div>EVã«ä¹ã£ã¦ããããé¢ä¿ãªãï¼</div>
+      <div class="faq-a">é¢ä¿ããã¾ããé»åã®å¤ãã¯LNGï¼æ¶²åå¤©ç¶ã¬ã¹ï¼ã§ä½ããã¦ããããã®å¤§åããã«ã ãºæµ·å³¡çµç±ã§ããé»æ°ä»£ãä¸ããã°ãEVåé»ã³ã¹ããå¢å ãã¾ããã¾ããEVã®ããããªã¼ãã¢ã¼ã¿ã¼é¨åããã©ã¹ããã¯ï¼ãããµç±æ¥ï¼ãä½¿ã£ã¦ãã¾ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-badge">Q</div>ã¹ã¼ãã¼ã®æ£ãããç©ºã«ãªããã¨ã¯ããï¼</div>
+      <div class="faq-a">ä»ããã¯èµ·ãã¾ãããæ¥æ¬ã¯254æ¥åã®ç³æ²¹åèãæã£ã¦ãã¾ãããã ãä¾¡æ ¼ã¯å¥ã®è©±ã§ããã§ã«ä¸æãå§ã¾ã£ã¦ãã¾ããåèãåé¡ã«ãªãã®ã¯å°éã8ã¶æä»¥ä¸é·å¼ããå ´åã§ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-badge">Q</div>éææ£èä»¥å¤ã®æ£èã¸ã®å½±é¿ã¯ï¼</div>
+      <div class="faq-a">æè¡ã§ä½¿ãå»æ¶²å®¹å¨ãç¹æ»´ããã°ãå»çç¨ãã¥ã¼ããªã©ããã©ã¹ããã¯ï¼ãããµç±æ¥ï¼è£½ã§ããã¾ãçé¢ã®é»åãé¼è¿«ããã°ãäººå·¥å¼å¸å¨ã»MRIã»æè¡å®¤ç§æãªã©ãé»æ°ãæ­¢ã¾ãã¨å³å½ã«é¢ãããè¨­åãã¹ã¦ã«å½±é¿ãã¾ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-badge">Q</div>æ¥æ¬ã¯ãªãã¤ã©ã³ã¨é¢ä¿ãããã®ï¼</div>
+      <div class="faq-a">æ¥æ¬ã¯æ¬§ç±³ã®å¯¾ã¤ã©ã³å¶è£ã®ä¸­ã§ãä¸­ç«çãªå¤äº¤å§¿å¢ãä¿ã£ã¦ããæ°å°ãªãå½ã®ã²ã¨ã¤ã§ãããã®é¢ä¿ããããããã¤ã©ã³ã¯æ¥æ¬è¹ç±ã®ééãç¹å¥ã«è¨±å¯ããã¨ããåãããã¦ãã¾ãããã ãã¢ã¡ãªã«ããã®å§åããããæ¥æ¬æ¿åºã¯éå¸¸ã«é£ãããã©ã³ã¹ãåã£ã¦ãã¾ãã</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-badge">Q</div>ä»ããèªåã«ã§ãããã¨ã¯ããï¼</div>
+      <div class="faq-a">ãããã¯è²·ãã¯ä¸è¦ã§ãããã ããåç±è²»ã®ç¯ç´æè­ãé«ãããã¨ãé·æä¿å­é£ã®åèãå°ãå¢ããã¦ãããã¨ãéæãªã©å®ææ²»çãåãã¦ããæ¹ã¯ä¸»æ²»å»ã«ç¸è«ãã¦ãããã¨ãç¾å®çãªå¯¾å¿ã§ããä»å¾ã®æ¿åºã®ç¯é»ã»è£å©éæå ±ãæ³¨è¦ãã¦ãã ããã</div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ FOOTER ââ -->
+<footer class="footer">
+  <h3>ð° ãã®æå ±ã¯2026å¹´4æ4æ¥ç¾å¨ã®ãã®ã§ã</h3>
+  <p>ç¶æ³ã¯å»ãã¨å¤ãã£ã¦ãã¾ããææ°æå ±ã¯ä¿¡é ¼ã§ãããã¥ã¼ã¹ã½ã¼ã¹ã§ãç¢ºèªãã ããããã®ãã¼ã¸ã¯æ¿æ²»çãªç«å ´ãããããä¸­ç«ã»äºå®ãã¼ã¹ã®æå ±æä¾ãç®çã¨ãã¦ãã¾ãã</p>
+  <div class="sources">
+    åèã»åºå¸ï¼
+    <a href="https://www.bloomberg.com/jp/news/articles/2026-03-22/TCB7U5KIJH9600" target="_blank">Bloombergï¼å°é4é±ç®ï¼</a> Â·
+    <a href="https://www.bloomberg.com/jp/news/features/2026-03-19/TC53E5KGZAMF00" target="_blank">Bloombergï¼è¹å¡è¨¼è¨ï¼</a> Â·
+    <a href="https://www.nikkei.com/article/DGXZQOUA27C4O0X20C26A3000000/" target="_blank">æ¥æ¬çµæ¸æ°è</a> Â·
+    <a href="https://news.yahoo.co.jp/articles/65ef41305d4a301bc44e8ccb4dca0f0f8d91d74d" target="_blank">ã­ã¤ã¿ã¼ï¼éæã»å»çæ©å¨ï¼</a> Â·
+    <a href="https://www.logi-today.com/929572" target="_blank">éæ34ä¸äººã®å½ç¶±</a> Â·
+    <a href="https://news.yahoo.co.jp/articles/5378bc005600dbd584ca15f64b263e2c3cc7bc89" target="_blank">TBS NEWSï¼45é»ï¼</a> Â·
+    <a href="https://toyokeizai.net/articles/-/937437" target="_blank">æ±æ´çµæ¸ï¼120é»â5é»ï¼</a> Â·
+    <a href="https://www.mofa.go.jp/mofaj/me_a/me2/pageit_000001_02807.html" target="_blank">å¤åçå±åå£°æ</a> Â·
+    <a href="https://jbpress.ismedia.jp/articles/-/93928" target="_blank">JBpressï¼åèè©¦ç®ï¼</a> Â·
+    <a href="https://business.nikkei.com/atcl/gen/19/00869/032600003/" target="_blank">æ¥çµãã¸ãã¹ï¼æµ·ä¸æ»çåæ²¹ï¼</a> Â·
+    <a href="https://www.cnn.co.jp/world/35245543.html" target="_blank">CNNï¼è¹é·è¨¼è¨ï¼</a>
+  </div>
+</footer>
+
+<script>
+  // ââââââââââââââââââââââââââââââââââââââââ
+  // âï¸  æ¯æ¥ããã ãæ´æ°ããå¤æ°
+  var SHARE_DATE      = '4月5日';
+  var   var SHARE_HIGHLIGHT = 'トランプ最終期限4/6前日・イラク石油船のホルムズ通航を許可';
+
+  // ââ ã·ã§ã¢URLçæ ââ
+  (function() {
+    var title = encodeURIComponent('ãã«ã ãºæµ·å³¡ãæ­¢ã¾ã£ã¦ãããããªãã®çæ´»ã«ä½ãèµ·ãã¦ããã');
+    var url   = encodeURIComponent(window.location.href);
+        var text  = encodeURIComponent('ã' + SHARE_DATE + 'æ´æ°ããã«ã ãºæµ·å³¡å°é5é±ç®ã' + SHARE_HIGHLIGHT + 'ãéææ£è34ä¸äººã»45é»ã®è¹å¡ã»åå½ã®è¨ç»åé»ã¾ã§ãæ¿æ²»ã«è©³ãããªãã¦ã5åã§ãããè§£èª¬ã')
+
+    var xUrl    = 'https://twitter.com/intent/tweet?text=' + text + '%0A' + url;
+    var lineUrl = 'https://line.me/R/msg/text/?' + text + '%0A' + url;
+    var fbUrl   = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + text;
+
+    // hero buttons
+    document.getElementById('share-x').href    = xUrl;
+    document.getElementById('share-line').href = lineUrl;
+    document.getElementById('share-fb').href   = fbUrl;
+    // float buttons
+    document.getElementById('float-x').href    = xUrl;
+    document.getElementById('float-line').href = lineUrl;
+    document.getElementById('float-fb').href   = fbUrl;
+  })();
+
+  // ââ ãªã³ã¯ã³ãã¼ ââ
+  function trackShare(method, loc) {
+    if (typeof gtag !== 'undefined') gtag('event', 'share', { method: method, content_type: 'page', location: loc });
+  }
+
+  function copyLink(btn, loc) {
+    trackShare('copy_link', loc || 'unknown');
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      var orig = btn.textContent;
+      btn.textContent = 'â ã³ãã¼ãã¾ãã';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    }).catch(function() {
+      // fallback
+      var ta = document.createElement('textarea');
+      ta.value = window.location.href;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = 'â ã³ãã¼ãã¾ãã';
+      setTimeout(function() { btn.textContent = 'ð ãªã³ã¯ãã³ãã¼'; }, 2000);
+    });
+  }
+
+  // ââ ã¿ã¤ã ã©ã¤ã³å±¥æ­´ã¢ã³ã¼ãã£ãªã³ ââ
+  function togglePtlHistory() {
+    var hist = document.getElementById('ptl-history');
+    var btn  = document.getElementById('ptl-toggle');
+    var isCollapsed = hist.classList.toggle('collapsed');
+    btn.textContent = isCollapsed
+      ? 'ð 2æ28æ¥ã3æ29æ¥ã®çµç·¯ãè¦ãï¼12ä»¶ï¼â¼'
+      : 'ð 2æ28æ¥ã3æ29æ¥ã®çµç·¯ãéãã â²';
+  }
+
+  // ââ ãã­ã¼ãã£ã³ã°ã·ã§ã¢ãã°ã« ââ
+  function toggleFloatShare() {
+    var menu = document.getElementById('float-menu');
+    var btn  = document.getElementById('float-toggle');
+    var isOpen = menu.classList.toggle('open');
+    if (isOpen) trackShare('menu_open', 'float');
+    btn.textContent = isOpen ? 'â' : 'ð¤';
+  }
+
+  // ã¡ãã¥ã¼å¤ã¯ãªãã¯ã§éãã
+  document.addEventListener('click', function(e) {
+    var share = document.querySelector('.float-share');
+    if (share && !share.contains(e.target)) {
+      document.getElementById('float-menu').classList.remove('open');
+      document.getElementById('float-toggle').textContent = 'ð¤';
+    }
+  });
+</script>
+
+<script>
+// ã»ã¯ã·ã§ã³6ã®æ¥ä»ããã¼ã­ã¼ã®æçµæ´æ°æ¥ããèªååæ
+(function(){
+  var hero = document.getElementById("last-updated");
+  var sd = document.getElementById("scenario-date");
+  if(hero && sd){
+    var m = hero.textContent.match(/(\d+æ\d+æ¥)/);
+    if(m) sd.textContent = m[1];
+  }
+})();
+</script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
