@@ -1177,6 +1177,122 @@
         .rf-node { min-width: unset; }
     .alert-banner { flex-direction: column; gap: 8px; }
   }
+
+  /* === Calendar timeline (added) === */
+  .ptl-section-label {
+    font-size: 0.82rem; font-weight: 800; color: var(--gray);
+    margin: 4px 0 14px; padding-bottom: 8px;
+    border-bottom: 2px solid rgba(29,53,87,0.15);
+    letter-spacing: 0.05em; text-transform: none;
+  }
+  .cal-section { margin-top: 36px; }
+  .cal-legend {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    font-size: 0.72rem; color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .cal-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+  .cal-legend-dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 3px;
+  }
+  .cal-legend-dot.red { background: var(--red); }
+  .cal-legend-dot.orange { background: var(--orange); }
+  .cal-legend-dot.blue { background: var(--blue); }
+  .cal-legend-dot.green { background: var(--green); }
+  .event-calendar {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; margin-bottom: 14px;
+  }
+  .cal-month {
+    background: #fff; border-radius: 12px;
+    padding: 12px 10px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .cal-month-name {
+    font-size: 0.85rem; font-weight: 800; color: var(--dark);
+    margin-bottom: 8px; text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 3px; font-size: 0.78rem;
+  }
+  .cal-dow {
+    text-align: center; font-weight: 700;
+    color: var(--gray); font-size: 0.66rem;
+    padding: 3px 0;
+  }
+  .cal-day {
+    aspect-ratio: 1 / 1;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px;
+    color: rgba(0,0,0,0.35);
+    font-size: 0.78rem;
+    user-select: none;
+  }
+  .cal-day.cal-empty { background: transparent; }
+  .cal-day.has-event {
+    color: #fff; font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  .cal-day.has-event:hover {
+    transform: scale(1.12);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  }
+  .cal-day.has-event.red { background: var(--red); }
+  .cal-day.has-event.orange { background: var(--orange); color: #5a3a0e; }
+  .cal-day.has-event.blue { background: var(--blue); }
+  .cal-day.has-event.green { background: var(--green); }
+  .cal-day.has-event.active {
+    box-shadow: 0 0 0 3px var(--dark), 0 4px 10px rgba(0,0,0,0.2);
+    transform: scale(1.12);
+  }
+  .cal-detail {
+    background: #fff; border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    margin-top: 10px;
+    position: relative;
+  }
+  .cal-detail-close {
+    position: absolute; top: 8px; right: 10px;
+    background: none; border: none; cursor: pointer;
+    font-size: 1.3rem; line-height: 1; color: var(--gray);
+    padding: 4px 8px;
+  }
+  .cal-detail-close:hover { color: var(--dark); }
+  .cal-detail-date {
+    font-size: 0.72rem; font-weight: 700; color: var(--gray);
+    letter-spacing: 0.05em; margin-bottom: 10px;
+  }
+  .cal-detail-event {
+    padding: 8px 0; border-top: 1px dashed rgba(0,0,0,0.1);
+  }
+  .cal-detail-event:first-of-type { border-top: none; padding-top: 0; }
+  .cal-detail-who {
+    display: inline-block;
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 0.72rem; font-weight: 700;
+    color: #fff; margin-bottom: 6px;
+  }
+  .cal-detail-who.red { background: var(--red); }
+  .cal-detail-who.orange { background: var(--orange); color: #5a3a0e; }
+  .cal-detail-who.blue { background: var(--blue); }
+  .cal-detail-who.green { background: var(--green); }
+  .cal-detail-strong {
+    font-size: 0.95rem; font-weight: 800;
+    color: var(--dark); margin: 4px 0 6px;
+    line-height: 1.5;
+  }
+  .cal-detail-body {
+    font-size: 0.85rem; color: #333;
+    line-height: 1.7;
+  }
+
 </style>
 </head>
 <body>
@@ -1380,229 +1496,7 @@
     <!-- Political timeline -->
     <h3 style="font-size:1rem; font-weight:800; margin-bottom:20px; color:var(--dark);">📅 「なぜ通れないか」の経緯を時系列で</h3>
     <div class="ptl">
-      <button class="ptl-history-toggle" id="ptl-toggle" onclick="togglePtlHistory()">
-        📅 2月28日〜3月29日の経緯を見る（12件）▼
-      </button>
-      <div class="ptl-history collapsed" id="ptl-history">
-      <div class="ptl-item">
-        <div class="ptl-dot dot-red"></div>
-        <div class="ptl-date">2026年2月28日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-ir">🇮🇷 イラン</span>
-          <strong>米・イスラエルがイラン軍事施設を攻撃 → 革命防衛隊が封鎖宣言</strong>
-          革命防衛隊が封鎖宣言。1日120隻だった通航船が5隻程度に激減。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月上旬</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇯🇵 日本政府</span>
-          <strong>日本関係船45隻の足止めを確認。政府が備蓄放出を決定</strong>
-          日本船主協会が日本関係船45隻・船員1,154名（うち日本人24名）がペルシャ湾内で待機中と発表。経産省が国家備蓄放出（約8,000万バレル）を開始。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月14日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-us">🇺🇸 トランプ大統領</span>
-          <strong>「日中韓・英仏も軍艦を派遣せよ」と各国に要求</strong>
-          同盟国に海軍艦艇の派遣を呼びかけ。日本を名指しで言及（日経）。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-blue"></div>
-        <div class="ptl-date">2026年3月19日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-intl">🌐 日英仏独伊蘭加 共同声明</span>
-          <strong>7カ国首脳が共同声明。「機雷・ドローン攻撃を即時停止せよ」</strong>
-          高市首相も署名。参加国は30か国に拡大。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-blue"></div>
-        <div class="ptl-date">2026年3月19〜20日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇯🇵 高市首相 ✕ 🇮🇷 イラン外相</span>
-          <strong>日本への特別配慮：イランが「日本船の通過を認める用意」と表明</strong>
-          アラグチ外相「日本関連船舶の通過を認める用意がある」と発表。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-red"></div>
-        <div class="ptl-date">2026年3月21〜22日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-us">🇺🇸 トランプ大統領</span>
-          <strong>「48時間以内に開放しなければ電力インフラを攻撃する」と最後通告</strong>
-          イランは「攻撃すれば完全封鎖で対抗」と反発（Bloomberg）。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月23日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-us">🇺🇸 トランプ大統領</span>
-          <strong>一転して「良好な対話が続いている」と攻撃期限を事実上延期</strong>
-          「核兵器の非保有」など15の合意事項があるとも主張。イランは「米国との直接交渉ではなく、仲介者を通じた接触」と否定。双方の情報が食い違い、先行きは不透明。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月26日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-ir">🇮🇷 イラン ／ 🇯🇵 日本政府</span>
-          <strong>イランがタンカー10隻の通航を許可。ただし全面解除ならず</strong>
-          「タンカー10隻を通航」と発表。ただし全面解除ならず。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-red"></div>
-        <div class="ptl-date">2026年3月27日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇯🇵 日本（医療）</span>
-          <strong>ロイターが報道：透析・手術用品が4〜8月に出荷困難になる可能性</strong>
-          ナフサ不足による医療機器への影響が顕在化。詳細は「透析34万人」のセクションへ。
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月27日</div>
-        <div class="ptl-card">
-          <span class="ptl-who" style="background:#6c5ce7;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;">🌐 G7外相会合</span>
-          <strong>G7共同声明：「通航料なき航行の自由の恒久的回復が絶対的に必要」</strong>
-          攻撃の即時停止と航行の自由の恒久的回復を確認。茂木外相「G7で齊齎なし」。（日経ワAFP）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年3月29日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇯🇵 日本政府</span>
-          <strong>封鎖５週目：G7協調路線を維持、イランとの個別交渉は引き続き否定</strong>
-          G7声明後も具体的打開策は示されず。日本は石油備蓄（政府・民間合計約180日分）を維持しつつ、医療・化学品分野の供給憸念が続く。（出典：Bloomberg・日経新聞）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-blue"></div>
-        <div class="ptl-date">2026年3月29日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-intl">🌐 G7外相会議（パリ辺)</span>
-          <strong>G7共同声明：30カ国超がホルムズ安全確保に「貢献の用意」表明</strong>
-          仏ヴォー・ド・セルネーで開催されたG7外相会議で共同声明を採択。英・独・仏・伊・加・日を含む 30カ国以上が戦後の海峡再開支援を表明。米ルビオ国務長官は戦後のホルムズ回巳計画を提示。民間死者への攻撃停止も一致要請。
-        </div>
-      </div>
-      </div><!-- /.ptl-history -->
-      <div class="ptl-item">
-        <div class="ptl-dot dot-red"></div>
-        <div class="ptl-date">2026年3月30〜31日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-us">🇺🇸 トランプ政権</span>
-          <strong>「4月6日が期限」——合意なければイランの発電所を攻撃</strong>
-          トランプ大統領が4月6日を最後通牌の期限に設定。「戦争終結はホルムズ再開の前」とも言及。イランとの協議は「建設的」としながらも圧力を継続。（Bloomberg・時事）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-green"></div>
-        <div class="ptl-date">2026年3月30日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇯🇵 日本人船員</span>
-          <strong>封鎖後初めて日本人4名が下船・帰国</strong>
-          ペルシャ湾に足止めされていた日本人乗組員24名のうち4名が初めて下船・帰国。健康状態に問題なし（外務省確認）。残る20名について官房長官「安全確保が最重要」。（ANN・読売）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月1日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇺🇸 🇮🇷 🇨🇳 🇵🇰 多国混戦</span>
-          <strong>封鎖5週目・4/6期限まであと5日</strong>
-          イランとの交渉は継続中。原油価格はWTI約104ドルで高止まり。イランは一部船舶に最大200万ドルの「通行料」を課す動きも。（Bloomberg・時事）
-        </div>
-      </div>
-    </div>
-          <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月2日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇺🇸 🇬🇧 米・英</span>
-          <strong>トランプ大統領、ホルムズ再開を停戦条件に明言・国民向け演説実施</strong>
-          トランプ大統領は4月2日、国民向け演説でイラン情勢を説明。「ホルムズ海峡が再開されるまで停戦は考慮しない」と明言、4月6日の最終期限を迎え交渉継続中。イラン側は停戦要請を否定（Bloomberg・NBC）
-        </div>
-      </div>
-            <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月3日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🌐 日欧40カ国</span>
-          <strong>日欧な぀40カ国がホルムズ通航料拒否・イラン制裁も検討</strong>
-          英国主導の40カ国以上の外相会合で、イランによる海峡封鎖・通航料弴収への対抗策を協議。通航料拒否と制裁を含む議長声明を採択。同時にイランとオマーンが海峡通航監視の協定草案を作成中と報じられる（Bloomberg・Al Jazeera・CNBC）
-        </div>
-      </div>
-
-            <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月4日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇮🇷 イラン</span>
-          <strong>イランが米軍機2機撃墜・湾岸製油所を攻撃、戦闘激化</strong>
-          イランがF-15を含む米軍機2機を撃墜（紛争開始以来初）。クウェートのミナ・アル・アフマディ製油所およびUAEのハブシャンガス施設が被弾。ブレント原油は109ドル、WTIは111ドル超。（NPR・CNN・Bloomberg）
-        </div>
-      </div>
-            <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月5日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇺🇸 トランプ大統領</span>
-          <strong>トランプ大統領のイラン合意期限4月6日を前に緊張高まる</strong>
-          トランプ大統領が設定したイランとの核合意期限（4月6日）を翌日に控え、各国の外交努力が活発化。イラクは石油輸出船のホルムズ海峡通航を許可されたと報じられている（Reuters・Bloomberg）
-        </div>
-      </div>
-            <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月7日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇺🇸 🇮🇷 米・イラン</span>
-          <strong>トランプ期限到来：イランは最後通告を拒否、攻撃開始の可能性</strong>
-          トランプ大統領が設定した対イラン期限が日本時間4月7日午前9時に到来。イランは一時停戦を拒否し、戦争被害の補儯と制裁解除を要求。過去24時間で20隻が海峡を通過し開戦後最多だが、歴史的平均の7分の1にとどまる。（CNN・Al Jazeera・Bloomberg）
-        </div>
-      </div>
-            <div class="ptl-item">
-        <div class="ptl-dot dot-orange"></div>
-        <div class="ptl-date">2026年4月9日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-jp">🇮🇷 イラン</span>
-          <strong>停戦発効もホルムズ封鎖継続、イランが通行料を要求</strong>
-          4月8日に米イラン停戦が発効したが、ホルムズ海峡は事実上の封鎖が継続。通過した船はわずか3隻にとどまり、2190隻以上が湾内に足止めのまま。イランは海峡再開の条件として通行料徴収を要求しており、トランプ大統領は「通行料なしの完全開放」を要求（Bloomberg・CNBC）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-red"></div>
-        <div class="ptl-date">2026年4月11〜13日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-us">🇺🇸 米海軍 ／ 🇺🇸 トランプ大統領</span>
-          <strong>交渉決裂→米国がホルムズ海峡に海上封鎖を実施</strong>
-          4月11日、米海軍駆逐艦が戦争開始以来初めてホルムズ海峡に進入。12日にヴァンス副大統領が「米イラン交渉は決裂」と発表し、13日にはトランプ大統領が海峡への海上封鎖を正式に命令。「米イラン間の取引が100％完了するまで封鎖継続」と表明。（WSJ・Wikipedia・Al Jazeera）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-blue"></div>
-        <div class="ptl-date">2026年4月14日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-intl">🌐 原油市場</span>
-          <strong>WTI原油が7.9%急落し$91.28／バレル──封鎖長期化観測で需要減速懸念</strong>
-          交渉決裂を受けて市場は一時リスクオフ反応から転じ、需要減速懸念で下落。WTIは一時$90を割り込み91.28ドルで終了。Brentも連動安。国家備蓄放出を日本政府が継続中。（野村證券・Bloomberg）
-        </div>
-      </div>
-      <div class="ptl-item">
-        <div class="ptl-dot dot-green"></div>
-        <div class="ptl-date">2026年4月17日</div>
-        <div class="ptl-card">
-          <span class="ptl-who who-ir">🇮🇷 アラグチ外相</span>
-          <strong>「停戦期間中、指定ルートで全商船の通航を認める」と表明</strong>
-          イランのアラグチ外相がXで、レバノン停戦延長に伴い、当局指定ルートに基づき全商業船舶のホルムズ通航を認めると発表。実務上はイランの許可制だが、戦争開始後初の公式開放メッセージ。（日経・ジェトロ）
-        </div>
-      </div>
+      <div class="ptl-section-label">📰 直近1週間のハイライト（4/18〜4/24）</div>
       <div class="ptl-item">
         <div class="ptl-dot dot-red"></div>
         <div class="ptl-date">2026年4月18日</div>
@@ -1630,6 +1524,31 @@
           トランプ大統領がホルムズ海峡で機雷敷設を試みるイラン船舶を「その場で撃沈」するよう米海軍に命令。IRGCが23日に公開した貨物船拿捕映像で緊張が再燃する中、Brentは$105.07/バレル、WTIは$95.85/バレルまで上昇。日本関係船約44隻はペルシャ湾で足止め継続（封鎖8週目）。（Euronews・CNN・Bloomberg・CBS）
         </div>
       </div>
+      <div class="cal-section">
+        <div class="ptl-section-label">📅 過去の経緯（カレンダー：色付きの日をタップで詳細）</div>
+        <div class="cal-legend">
+          <span class="cal-legend-item"><span class="cal-legend-dot red"></span>緊迫・攻撃</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot orange"></span>外交・要請</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot blue"></span>協議・市場</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot green"></span>進展・帰国</span>
+        </div>
+        <div class="event-calendar">
+          <div class="cal-month">
+            <div class="cal-month-name">2026年2月</div>
+            <div class="cal-grid"><span class="cal-dow">日</span><span class="cal-dow">月</span><span class="cal-dow">火</span><span class="cal-dow">水</span><span class="cal-dow">木</span><span class="cal-dow">金</span><span class="cal-dow">土</span><span class="cal-day">1</span><span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span><span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day">10</span><span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span><span class="cal-day">14</span><span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day">17</span><span class="cal-day">18</span><span class="cal-day">19</span><span class="cal-day">20</span><span class="cal-day">21</span><span class="cal-day">22</span><span class="cal-day">23</span><span class="cal-day">24</span><span class="cal-day">25</span><span class="cal-day">26</span><span class="cal-day">27</span><span class="cal-day has-event red" data-date="2026-02-28" onclick="showCalEvent('2026-02-28')">28</span></div>
+          </div>
+          <div class="cal-month">
+            <div class="cal-month-name">2026年3月</div>
+            <div class="cal-grid"><span class="cal-dow">日</span><span class="cal-dow">月</span><span class="cal-dow">火</span><span class="cal-dow">水</span><span class="cal-dow">木</span><span class="cal-dow">金</span><span class="cal-dow">土</span><span class="cal-day has-event orange" data-date="2026-03-01" onclick="showCalEvent('2026-03-01')">1</span><span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span><span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day">10</span><span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span><span class="cal-day has-event orange" data-date="2026-03-14" onclick="showCalEvent('2026-03-14')">14</span><span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day">17</span><span class="cal-day">18</span><span class="cal-day has-event blue" data-date="2026-03-19" onclick="showCalEvent('2026-03-19')">19</span><span class="cal-day has-event blue" data-date="2026-03-20" onclick="showCalEvent('2026-03-20')">20</span><span class="cal-day has-event red" data-date="2026-03-21" onclick="showCalEvent('2026-03-21')">21</span><span class="cal-day has-event red" data-date="2026-03-22" onclick="showCalEvent('2026-03-22')">22</span><span class="cal-day has-event orange" data-date="2026-03-23" onclick="showCalEvent('2026-03-23')">23</span><span class="cal-day">24</span><span class="cal-day">25</span><span class="cal-day has-event orange" data-date="2026-03-26" onclick="showCalEvent('2026-03-26')">26</span><span class="cal-day has-event red" data-date="2026-03-27" onclick="showCalEvent('2026-03-27')">27</span><span class="cal-day">28</span><span class="cal-day has-event orange" data-date="2026-03-29" onclick="showCalEvent('2026-03-29')">29</span><span class="cal-day has-event red" data-date="2026-03-30" onclick="showCalEvent('2026-03-30')">30</span><span class="cal-day has-event red" data-date="2026-03-31" onclick="showCalEvent('2026-03-31')">31</span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span></div>
+          </div>
+          <div class="cal-month">
+            <div class="cal-month-name">2026年4月（〜17日）</div>
+            <div class="cal-grid"><span class="cal-dow">日</span><span class="cal-dow">月</span><span class="cal-dow">火</span><span class="cal-dow">水</span><span class="cal-dow">木</span><span class="cal-dow">金</span><span class="cal-dow">土</span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day has-event red" data-date="2026-04-01" onclick="showCalEvent('2026-04-01')">1</span><span class="cal-day has-event blue" data-date="2026-04-02" onclick="showCalEvent('2026-04-02')">2</span><span class="cal-day has-event orange" data-date="2026-04-03" onclick="showCalEvent('2026-04-03')">3</span><span class="cal-day has-event orange" data-date="2026-04-04" onclick="showCalEvent('2026-04-04')">4</span><span class="cal-day has-event orange" data-date="2026-04-05" onclick="showCalEvent('2026-04-05')">5</span><span class="cal-day">6</span><span class="cal-day has-event orange" data-date="2026-04-07" onclick="showCalEvent('2026-04-07')">7</span><span class="cal-day">8</span><span class="cal-day has-event red" data-date="2026-04-09" onclick="showCalEvent('2026-04-09')">9</span><span class="cal-day">10</span><span class="cal-day has-event red" data-date="2026-04-11" onclick="showCalEvent('2026-04-11')">11</span><span class="cal-day has-event red" data-date="2026-04-12" onclick="showCalEvent('2026-04-12')">12</span><span class="cal-day has-event red" data-date="2026-04-13" onclick="showCalEvent('2026-04-13')">13</span><span class="cal-day has-event blue" data-date="2026-04-14" onclick="showCalEvent('2026-04-14')">14</span><span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day has-event green" data-date="2026-04-17" onclick="showCalEvent('2026-04-17')">17</span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span><span class="cal-day cal-empty"></span></div>
+          </div>
+        </div>
+        <div class="cal-detail" id="cal-detail" style="display:none;"></div>
+      </div>
+    </div>
       <!-- DIPLOMATIC GAP -->
     <div class="diplo-gap">
       <div class="diplo-gap-header">
@@ -2314,6 +2233,41 @@
     if(m) sd.textContent = m[1];
   }
 })();
+</script>
+
+<script>
+  // === Calendar event data + handlers (added) ===
+  window.__calEvents = {"2026-02-28":[{"dot":"red","who":"🇮🇷 イラン","strong":"米・イスラエルがイラン軍事施設を攻撃→革命防衛隊が封鎖宣言","body":"革命防衛隊が封鎖宣言。1日120隻だった通航船が5隻程度に激減。"}],"2026-03-01":[{"dot":"orange","who":"🇯🇵 日本政府","strong":"日本関係船45隻の足止めを確認、政府が備蓄放出を決定（3月上旬）","body":"45隻・船員1,154名が湾内で待機中と判明。経産省が国家備蓄放出（約8,000万バレル）を開始。"}],"2026-03-14":[{"dot":"orange","who":"🇺🇸 トランプ大統領","strong":"「日中韓・英仏も軍艦を派遣せよ」と各国に要求","body":"同盟国に海軍艦艇の派遣を呼びかけ。日本を名指しで言及（日経）。"}],"2026-03-19":[{"dot":"blue","who":"🌐 日英仏独伊蘭加 共同声明","strong":"7カ国首脳が共同声明「機雷・ドローン攻撃を即時停止せよ」","body":"高市首相も署名。参加国は30か国に拡大。"}],"2026-03-20":[{"dot":"blue","who":"🇯🇵 高市首相 ✕ 🇮🇷 イラン外相","strong":"日本への特別配慮：イランが「日本船の通過を認める用意」と表明（3/19〜20）","body":"アラグチ外相「日本関連船舶の通過を認める用意がある」と発表。"}],"2026-03-21":[{"dot":"red","who":"🇺🇸 トランプ大統領","strong":"「48時間以内に開放しなければ電力インフラを攻撃する」最後通告（3/21〜22）","body":"イランは「攻撃すれば完全封鎖で対抗」と反発（Bloomberg）。"}],"2026-03-22":[{"dot":"red","who":"🇺🇸 トランプ大統領","strong":"「48時間以内に開放しなければ電力インフラを攻撃する」最後通告（3/21〜22）","body":"イランは「攻撃すれば完全封鎖で対抗」と反発（Bloomberg）。"}],"2026-03-23":[{"dot":"orange","who":"🇺🇸 トランプ大統領","strong":"一転「良好な対話が続いている」と攻撃期限を事実上延期","body":"双方の情報が食い違い、先行き不透明。"}],"2026-03-26":[{"dot":"orange","who":"🇮🇷 イラン／🇯🇵 日本","strong":"イランがタンカー10隻の通航を許可（全面解除はならず）","body":"「タンカー10隻を通航」と発表。ただし全面解除ならず。"}],"2026-03-27":[{"dot":"red","who":"🇯🇵 日本（医療）","strong":"ロイター報道：透析・手術用品が4〜8月に出荷困難になる可能性","body":"ナフサ不足による医療機器への影響が顕在化。詳細は「透析34万人」セクションへ。"},{"dot":"orange","who":"🌐 G7外相会合","strong":"G7共同声明「通航料なき航行の自由の恒久的回復が絶対的に必要」","body":"攻撃の即時停止と航行の自由の恒久的回復を確認。茂木外相「G7で齟齬なし」（日経・AFP）。"}],"2026-03-29":[{"dot":"orange","who":"🇯🇵 日本政府","strong":"封鎖5週目：外交交渉は依然膠着、備蓄消費が続く","body":"外交は膠着。備蓄は約180日分を維持。医療・化学品の供給懸念は継続中（Bloomberg・日経）。"}],"2026-03-30":[{"dot":"green","who":"🇯🇵 日本人船員","strong":"封鎖後初めて日本人4名が下船・帰国","body":"ペルシャ湾足止めの日本人乗組員24名のうち4名が初めて下船・帰国。健康状態に問題なし（外務省確認）。残る20名について官房長官「安全確保が最重要」（ANN・読売）。"},{"dot":"red","who":"🇺🇸 トランプ政権","strong":"「4月6日が期限」——合意なければイランの発電所を攻撃（3/30〜31）","body":"トランプ大統領が4月6日をイランへの最後通牒の期限に設定。同時に「戦争終結はホルムズ再開の前」とも言及。協議は「建設的」としつつ圧力を継続（Bloomberg・時事）。"}],"2026-03-31":[{"dot":"red","who":"🇺🇸 トランプ政権","strong":"「4月6日が期限」——合意なければイランの発電所を攻撃（3/30〜31）","body":"トランプ大統領が4月6日をイランへの最後通牒の期限に設定。同時に「戦争終結はホルムズ再開の前」とも言及（Bloomberg・時事）。"}],"2026-04-01":[{"dot":"red","who":"🇺🇸🇮🇷🇨🇳🇵🇰 多国混戦","strong":"「イランが停戦求めた」とSNS投稿→イランは即否定。中・パが和平案提示","body":"トランプ大統領のSNS投稿をイラン側は即否定し「6カ月戦える」と主張。中国・パキスタンが「即時停戦＋ホルムズ再開」の和平案を提示。トランプは「海峡が開かない限り停戦しない」とも発言（Bloomberg・日経・CNBC）。"}],"2026-04-02":[{"dot":"blue","who":"🇺🇸 🇬🇧 米・英","strong":"トランプが国民向け演説・英国が35カ国でホルムズ再開国際会議を表明","body":"トランプが「イランに関する重要情報」と予告した国民向けTV演説（日本時間午前10時）。英スターマー首相は35カ国合意の「海峡安全化」声明を発表し国際会議開催を表明。トランプは同盟国に「自分たちで取りに行け」と発言し物議を醸した（Bloomberg・時事・Business Standard）。"}],"2026-04-03":[{"dot":"orange","who":"🌐 日欧40カ国","strong":"40カ国がホルムズ通航料拒否・イラン制裁も検討","body":"英国主導の40カ国以上の外相会合で、イランによる海峡封鎖・通航料弾収への対抗策を協議。通航料拒否と制裁を含む議長声明を採択（Bloomberg・Al Jazeera・CNBC）。"}],"2026-04-04":[{"dot":"orange","who":"🇮🇷 イラン","strong":"イランが米軍機2機撃墜・湾岸製油所を攻撃、戦闘激化","body":"イランがF-15を含む米軍機2機を撃墜（紛争開始以来初）。クウェートのミナ・アル・アフマディ製油所およびUAEのハブシャンガス施設が被弾。Brent原油は109ドル、WTIは111ドル超（NPR・CNN・Bloomberg）。"}],"2026-04-05":[{"dot":"orange","who":"🇺🇸 トランプ大統領","strong":"トランプ大統領のイラン合意期限4月6日を前に緊張高まる","body":"トランプ大統領が設定したイランとの核合意期限（4月6日）を翌日に控え、各国の外交努力が活発化。イラクは石油輸出船のホルムズ海峡通航を許可されたと報じられている（Reuters・Bloomberg）。"}],"2026-04-07":[{"dot":"orange","who":"🇺🇸 🇮🇷 米・イラン","strong":"トランプ期限到来：イランは最後通告を拒否、攻撃開始の可能性","body":"トランプ期限が日本時間4月7日午前9時に到来。イランは一時停戦を拒否し、戦争被害の補償と制裁解除を要求。過去24時間で20隻が海峡を通過し開戦後最多だが、歴史的平均の7分の1にとどまる（CNN・Al Jazeera・Bloomberg）。"}],"2026-04-09":[{"dot":"red","who":"🇮🇷 イラン","strong":"停戦発効もホルムズ封鎖継続、イランが通行料を要求","body":"4月8日に米イラン停戦が発効したが、ホルムズ海峡は事実上の封鎖が継続。通過した船はわずか3隻、2,190隻以上が湾内に足止め。イランは海峡再開の条件として通行料徴収を要求し、トランプ大統領は「通行料なしの完全開放」を要求（Bloomberg・CNBC）。"}],"2026-04-11":[{"dot":"red","who":"🇺🇸 米海軍／🇺🇸 トランプ","strong":"交渉決裂→米国がホルムズ海峡に海上封鎖を実施（4/11〜13）","body":"4/11、米海軍駆逐艦が戦争開始以来初めてホルムズ海峡に進入。12日にヴァンス副大統領が「米イラン交渉は決裂」と発表し、13日にはトランプ大統領が海峡への海上封鎖を正式に命令。「米イラン間の取引が100％完了するまで封鎖継続」と表明（WSJ・Wikipedia・Al Jazeera）。"}],"2026-04-12":[{"dot":"red","who":"🇺🇸 米海軍／🇺🇸 トランプ","strong":"交渉決裂→米国がホルムズ海峡に海上封鎖を実施（4/11〜13）","body":"4/11、米海軍駆逐艦が戦争開始以来初めてホルムズ海峡に進入。12日にヴァンス副大統領が「米イラン交渉は決裂」と発表し、13日にはトランプ大統領が海峡への海上封鎖を正式に命令（WSJ・Wikipedia・Al Jazeera）。"}],"2026-04-13":[{"dot":"red","who":"🇺🇸 米海軍／🇺🇸 トランプ","strong":"交渉決裂→米国がホルムズ海峡に海上封鎖を実施（4/11〜13）","body":"4/11、米海軍駆逐艦が戦争開始以来初めてホルムズ海峡に進入。12日にヴァンス副大統領が「米イラン交渉は決裂」と発表し、13日にはトランプ大統領が海峡への海上封鎖を正式に命令（WSJ・Wikipedia・Al Jazeera）。"}],"2026-04-14":[{"dot":"blue","who":"🌐 原油市場","strong":"WTI原油が7.9%急落し$91.28／バレル──封鎖長期化観測で需要減速懸念","body":"交渉決裂を受けて市場は一時リスクオフ反応から転じ、需要減速懸念で下落。WTIは一時$90を割り込み91.28ドルで終了。Brentも連動安。国家備蓄放出を日本政府が継続中（野村證券・Bloomberg）。"}],"2026-04-17":[{"dot":"green","who":"🇮🇷 アラグチ外相","strong":"「停戦期間中、指定ルートで全商船の通航を認める」と表明","body":"イランのアラグチ外相がXで、レバノン停戦延長に伴い、当局指定ルートに基づき全商業船舶のホルムズ通航を認めると発表。実務上はイランの許可制だが、戦争開始後初の公式開放メッセージ（日経・ジェトロ）。"}]};
+  function showCalEvent(dateKey) {
+    var evs = window.__calEvents[dateKey];
+    if (!evs) return;
+    var det = document.getElementById('cal-detail');
+    if (!det) return;
+    var dateLabel = dateKey.replace(/^2026-0?(\d+)-0?(\d+)$/, '2026年$1月$2日');
+    var html = '<button class="cal-detail-close" onclick="hideCalEvent()" aria-label="閉じる">×</button>';
+    html += '<div class="cal-detail-date">' + dateLabel + '</div>';
+    for (var i = 0; i < evs.length; i++) {
+      var e = evs[i];
+      html += '<div class="cal-detail-event">';
+      html += '<span class="cal-detail-who ' + e.dot + '">' + e.who + '</span>';
+      html += '<div class="cal-detail-strong">' + e.strong + '</div>';
+      html += '<div class="cal-detail-body">' + e.body + '</div>';
+      html += '</div>';
+    }
+    det.innerHTML = html;
+    det.style.display = 'block';
+    var prev = document.querySelector('.cal-day.has-event.active');
+    if (prev) prev.classList.remove('active');
+    var cur = document.querySelector('[data-date="' + dateKey + '"]');
+    if (cur) cur.classList.add('active');
+    det.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  function hideCalEvent() {
+    var det = document.getElementById('cal-detail');
+    if (det) det.style.display = 'none';
+    var prev = document.querySelector('.cal-day.has-event.active');
+    if (prev) prev.classList.remove('active');
+  }
 </script>
 </body>
 </html>
